@@ -1,0 +1,338 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#开始做">开始做</a><br><a class="wiz_toc h2" href="#一个易错的点！！！">一个易错的点！！！</a><br><a class="wiz_toc h1" href="#做出分隔效果设置各种距离">做出分隔效果(设置各种距离)</a><br><a class="wiz_toc h2" href="#图片与文字的分隔">图片与文字的分隔</a><br><a class="wiz_toc h2" href="#设置分隔线的长度">设置分隔线的长度</a><br><a class="wiz_toc h2" href="#设置上面hello和名字距离">设置上面hello和名字距离</a><br><a class="wiz_toc h2" href="#设置名字和职位的距离">设置名字和职位的距离</a><br><a class="wiz_toc h2" href="#设置横线的样式">设置横线的样式</a><br><a class="wiz_toc h2" href="#设置横线距离下面·年龄·的距离">设置横线距离下面·年龄·的距离</a><br><a class="wiz_toc h2" href="#设置为左右结构">设置为左右结构</a><br><a class="wiz_toc h2" href="#设置年龄的颜色字体等">设置年龄的颜色字体等</a><br><a class="wiz_toc h2" href="#做卡片的下面这一部分">做卡片的下面这一部分</a><br><a class="wiz_toc h3" href="#注意点">注意点</a><br><a class="wiz_toc h3" href="#一个网站设置图标logo的网站">一个网站(设置图标logo的网站)</a><br><a class="wiz_toc h3" href="#调整其宽度等属性">调整其宽度等属性</a><br><a class="wiz_toc h3" href="#设置居中">设置居中</a><br><a class="wiz_toc h2" href="#本文一些代码">本文一些代码</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<p>有关三角形的一些资源 <br>
+<img src="(11_3)css布局和定位_files/98e66ce8-b25c-45e5-83f0-60a16307935a.jpg" alt="" title=""> <br>
+也可以做一个太极： <br>
+<img src="(11_3)css布局和定位_files/c8d08666-9439-479a-940f-e2172d6413a8.png" alt="" title=""></p>
+
+<h2 id="开始做">开始做</h2>
+
+<p><img src="(11_3)css布局和定位_files/bd1c4379-069b-48f0-967a-d9b9db158c47.png" alt="" title=""></p>
+
+<p><code>pictureAndtext</code>是<code>picture</code>和<code>text</code>的父元素,在父元素里面添加一个<code>clearfix</code>;</p>
+
+<p><img src="(11_3)css布局和定位_files/ddb74197-9122-4a9f-9755-081d42b043d0.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/92dc2bb7-6761-4df2-8327-5065cf8e30a0.jpg" alt="" title=""></p>
+
+<p>左边头像右边 文字的布局就按照上面那个方法；</p>
+
+<p>测量内边距:50*50;</p>
+
+<p><img src="(11_3)css布局和定位_files/4d384eb8-dfcf-4ace-aaeb-7383053cb058.jpg" alt="" title=""> <br>
+如果用了padding，div就会变胖;</p>
+
+<p>很多时候由于外面这个userCard不能加padding; <br>
+<img src="(11_3)css布局和定位_files/f1021487-fbed-4f9f-9dd5-b0cdbc367ed9.jpg" alt="" title=""> <br>
+可以把padding加到里面的div:</p>
+
+<p><img src="(11_3)css布局和定位_files/e8fd3d5d-c9bb-4f6a-b347-481838083f1f.jpg" alt="" title=""></p>
+
+<p>外面不能加padding;在里面的padding加在里面的一个多余的div上面;</p>
+
+<h3 id="一个易错的点！！！">一个易错的点！！！</h3>
+
+<p>类名一定要意义对应,包括大小写！！！</p>
+
+<p><img src="(11_3)css布局和定位_files/b2105333-317a-44e3-8584-aef56e26e29c.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/363cdadb-e208-44e2-b554-868fe2e975c5.png" alt="" title=""></p>
+
+<p>最后效果: <br>
+<img src="(11_3)css布局和定位_files/f55962be-f025-486d-b0dc-5c711e8c94f6.jpg" alt="" title=""></p>
+
+<h2 id="做出分隔效果设置各种距离">做出分隔效果(设置各种距离)</h2>
+
+<h3 id="图片与文字的分隔">图片与文字的分隔</h3>
+
+<p><img src="(11_3)css布局和定位_files/8e592648-e906-40c4-a36f-6aec62637844.jpg" alt="" title=""></p>
+
+<p>可以给picture，也可以给text;</p>
+
+<p><img src="(11_3)css布局和定位_files/fd9b4106-73bb-4d91-aa88-fe01cfcd63c9.jpg" alt="" title=""></p>
+
+<p>这里也可以用padding的；</p>
+
+<p><img src="(11_3)css布局和定位_files/7152f81a-8ec8-472c-8e9e-9cf615690a35.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/7f7e5659-cf5e-4775-9caf-e8405f50eb1f.jpg" alt="" title=""></p>
+
+<p>这里可以通过开发者工具里面的属性进行预览； <br>
+通常是elemnts和styles;</p>
+
+<h3 id="设置分隔线的长度">设置分隔线的长度</h3>
+
+<p><img src="(11_3)css布局和定位_files/34725e08-89ce-4d1d-ab94-0fd72a9e06bd.jpg" alt="" title=""></p>
+
+<p>这里设置width为470px;其实一般不用width,可能会出bug，这里没有办法;</p>
+
+<p>标准是39px;</p>
+
+<h3 id="设置上面hello和名字距离">设置上面hello和名字距离</h3>
+
+<p><img src="(11_3)css布局和定位_files/a5708d29-4453-4b71-9562-8c3379d4cd0d.jpg" alt="" title=""></p>
+
+<p>我自己这里是20左右;少19px左右; <br>
+<img src="(11_3)css布局和定位_files/2b1c041d-85c2-423d-924f-fedf2eec6fea.png" alt="" title=""></p>
+
+<h3 id="设置名字和职位的距离">设置名字和职位的距离</h3>
+
+<p><img src="(11_3)css布局和定位_files/f5199c15-b8a5-462c-af09-f24f65dfa7b4.jpg" alt="" title=""></p>
+
+<p>恰好我自己的也是36px，但是我这里还是讲一讲吧;</p>
+
+<p>先把默认样式干掉; <br>
+<img src="(11_3)css布局和定位_files/0fb6886f-2ae3-44cb-b63a-2ce45873675f.png" alt="" title=""> <br>
+这样的话就需要重新调整了; <br>
+<img src="(11_3)css布局和定位_files/a77530ec-e127-41cf-b6e2-a37f8e95a827.jpg" alt="" title=""> <br>
+其实可以这么写:</p>
+
+<p><img src="(11_3)css布局和定位_files/3041a8fa-6b59-4dac-a313-d10e8719a6d7.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/13904252-4700-4f65-91bd-94f32216f114.jpg" alt="" title=""></p>
+
+<p>现在就好调了！</p>
+
+<p>hello 距离字体 36左右,而我自己的则28左右; <br>
+差一个8左右；</p>
+
+<p><img src="(11_3)css布局和定位_files/5a931764-a97d-424e-88b2-00bcd63d07de.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/d268e801-2a72-4d72-b84e-b0618fb3fddc.jpg" alt="" title=""></p>
+
+<h3 id="设置横线的样式">设置横线的样式</h3>
+
+<p>设置横线样式:</p>
+
+<p><img src="(11_3)css布局和定位_files/5ddf35c1-becb-4cd0-9566-2044c0ed9fc4.png" alt="" title=""></p>
+
+<h3 id="设置横线距离下面·年龄·的距离">设置横线距离下面·年龄·的距离</h3>
+
+<p><img src="(11_3)css布局和定位_files/19c7a350-ec6d-4268-b8d0-4b8d76e6d519.jpg" alt="" title=""></p>
+
+<p>而我自己的是5,相差20px;</p>
+
+<p><img src="(11_3)css布局和定位_files/aa6aacaf-d6ab-420f-a575-f9b94eaa8e82.png" alt="" title=""></p>
+
+<h3 id="设置为左右结构">设置为左右结构</h3>
+
+<p><img src="(11_3)css布局和定位_files/2ca89a63-a62b-4aa1-80c4-d0af23d1c930.jpg" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/bd4d14de-2956-49c0-9fc6-db6404860616.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/4850bacb-73b5-4ae7-a0ff-9e13783fc915.jpg" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/b2af0351-7ba3-4de9-bcee-b75d1fe48c09.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/19ac2f21-9d68-425a-a40d-33271eb66587.jpg" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/64b5766e-fc3a-471e-a39e-8a1131af1b10.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/f90a12f6-01ba-4576-9259-93bce9fdbfbc.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/bc4e96c0-76bf-401b-a3b8-3ded4b149290.jpg" alt="" title=""></p>
+
+<p>而我自己的是32-33左右; <br>
+可以用padding来做:(最终我是用上下各5px才比较好一点) <br>
+<img src="(11_3)css布局和定位_files/f8b5ebdc-4434-4f9c-a08a-67fc715c58ad.png" alt="" title=""></p>
+
+<h3 id="设置年龄的颜色字体等">设置年龄的颜色字体等</h3>
+
+<p><img src="(11_3)css布局和定位_files/76f51bba-0fed-40d2-85dc-92164d3e082d.png" alt="" title=""></p>
+
+<h3 id="做卡片的下面这一部分">做卡片的下面这一部分</h3>
+
+<p><img src="(11_3)css布局和定位_files/6f0086b9-097f-48ed-a1a6-e2644ddd56cf.jpg" alt="" title=""></p>
+
+<h4 id="注意点">注意点</h4>
+
+<p><img src="(11_3)css布局和定位_files/ff28fdd8-aeae-459b-91a6-6c161747170f.png" alt="" title=""> <br>
+上面这种写法是有问题的，下面这张图没有问题,即：<code>footer</code>和<code>.media</code>是没有空格的; <br>
+<img src="(11_3)css布局和定位_files/d48632ca-beb9-4c81-b084-5ff8684fa0bb.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/ccadf9e0-6e23-496a-ad48-3c15d9145eaa.jpg" alt="" title=""></p>
+
+<h4 id="一个网站设置图标logo的网站">一个网站(设置图标logo的网站)</h4>
+
+<p><code>iconfont.cn</code></p>
+
+<p><img src="(11_3)css布局和定位_files/de2988c2-a76c-4509-939d-f82f1d0e00e3.png" alt="" title=""></p>
+
+<p>在里面输入github,可以搜索一波;</p>
+
+<p><img src="(11_3)css布局和定位_files/24a4e4e4-5879-48de-b2c0-d2eb00d12c44.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/3d762a25-c0e6-4b19-98d6-5f0e4422ffdf.png" alt="" title=""></p>
+
+<p>添加至一个项目： <br>
+<img src="(11_3)css布局和定位_files/286c0040-b093-4a49-9d07-b46bb53e30e7.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/2cdd72ed-4288-46c6-a203-e592e5704705.png" alt="" title=""></p>
+
+<p>点击确定: <br>
+<img src="(11_3)css布局和定位_files/d207755e-9c14-4eb4-b9ef-d449b9dc7876.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/11bd4a85-aa6f-43aa-bb66-cfe61a808d86.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/7217625b-cc08-4357-b523-481a8ef17c8b.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/505fd4af-4b14-4e53-bd8f-1cae7f561db0.jpg" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/62b74943-cc55-454e-9e23-c6f9a9f818c6.png" alt="" title=""></p>
+
+<p>将此连链接放入页面里面:</p>
+
+<p><img src="(11_3)css布局和定位_files/dd109a99-0f8e-475f-9af3-153b9e7ca7e0.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/b6046286-5bbd-4e23-be53-d22a5a966a4a.png" alt="" title=""></p>
+
+<p>点击使用帮助:</p>
+
+<p><img src="(11_3)css布局和定位_files/af719ac3-f407-428e-92a2-9d2131b3c9c3.png" alt="" title=""></p>
+
+<p>symbol引用:</p>
+
+<p><img src="(11_3)css布局和定位_files/ae5e9117-26b1-4fc1-863f-e45cdb33eaf1.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/44c71c35-9a22-48b5-a2e6-e9b07d9ddb94.png" alt="" title=""></p>
+
+<p>上面加入的这部分: <br>
+<img src="(11_3)css布局和定位_files/730871f6-a313-466f-b8c3-04fc606bd00b.png" alt="" title=""> <br>
+第三步: <br>
+<img src="(11_3)css布局和定位_files/17565aa8-b787-48a1-9ab0-c36c70f863d4.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/37f8b435-8920-48d6-900f-09ed4ab957f8.png" alt="" title=""></p>
+
+<p>把里面的xxx换成下面的名字 <br>
+<img src="(11_3)css布局和定位_files/00e55cae-f28f-4113-b724-c9da2a5562dd.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/e438a0f7-7d92-406d-8845-ffae9bf63408.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/0cb636fa-6f47-4cc3-8d67-659deb934e19.jpg" alt="" title=""></p>
+
+<p>可以将这里的img都删了: <br>
+<img src="(11_3)css布局和定位_files/81e24b23-413a-4229-80dc-4f8bf527961a.png" alt="" title=""></p>
+
+<p>tips:可以复制图标</p>
+
+<p><img src="(11_3)css布局和定位_files/fb2a976d-2976-4981-8eb9-a89f2c2a9f9d.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/116bbc4e-b999-4328-b0bf-80e56aa3af15.png" alt="" title=""></p>
+
+<p>最终的式样:</p>
+
+<p><img src="(11_3)css布局和定位_files/fbe6ff9b-1a32-4bae-9a4b-1fe8f867cc2f.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/261a58b9-4c47-4d3c-959f-a960a2a177a7.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/8d14a787-c03f-457c-baec-774e478f0915.png" alt="" title=""></p>
+
+<h4 id="调整其宽度等属性">调整其宽度等属性</h4>
+
+<p><img src="(11_3)css布局和定位_files/20e015ff-b77a-41a3-8619-96f3942c8e1e.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/17eecae4-ecc4-4d61-9c8e-0b7111673c38.png" alt="" title=""></p>
+
+<h4 id="设置居中">设置居中</h4>
+
+<p><img src="(11_3)css布局和定位_files/59765484-7014-40cb-95ca-2b690d915a8b.jpg" alt="" title=""></p>
+
+<p>写的时候只要写上ta:c再按一个tab键即可;</p>
+
+<p><img src="(11_3)css布局和定位_files/9d798714-599a-42e9-bc91-01e687b596cc.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/bb3c652f-907a-492f-8386-2b280019f5e2.jpg" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/33aa8c84-dc3a-4bf4-9a5a-4668f89914bf.png" alt="" title=""></p>
+
+<p>**有个注意点，需要记忆一下； <br>
+** <br>
+上面的效果是上面比下面多一点；</p>
+
+<p><img src="(11_3)css布局和定位_files/704e19ab-b262-4e35-bcb2-5952fdb646b8.png" alt="" title=""></p>
+
+<p>现在上下就差不多了:</p>
+
+<p><img src="(11_3)css布局和定位_files/75278c2d-b576-4876-a843-b0eb2ea2894e.jpg" alt="" title=""></p>
+
+<p>footer的a 链接就是这个"圆圈";</p>
+
+<p><img src="(11_3)css布局和定位_files/336175cc-8f9f-4c5a-877f-9bbba2182777.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/c15f84a6-e0a6-4642-86f2-067e4305d465.jpg" alt="" title=""></p>
+
+<p>继续优化: <br>
+d:ib  然后加一个tab键即可; <br>
+<img src="(11_3)css布局和定位_files/3f65d412-6910-48de-aac4-de3e8a1a6c3f.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/cccae873-11d6-4493-8cb9-b39fa61d4ddd.jpg" alt="" title=""></p>
+
+<p>两个inline-block之间有空隙是因为它们之间有回车; <br>
+把这个去掉就可以变成圆的: <br>
+<img src="(11_3)css布局和定位_files/2e4166ef-c9d1-44e7-9f3a-6d16d5ec5e4d.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/3b57ecf8-d9cd-428a-b623-583567b0f402.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/2d609b69-5e5a-4859-b721-bbd6fe3d6864.jpg" alt="" title=""></p>
+
+<p>改成如下形式,其实有height是有bug的; <br>
+目前只能写成下面这样: <br>
+<img src="(11_3)css布局和定位_files/c7d73275-27ae-4953-ab73-a1120836e4b4.png" alt="" title=""> <br>
+去掉框框: <br>
+<img src="(11_3)css布局和定位_files/82a13740-34a1-42fe-8d19-bb1e2a2a6917.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/243d8495-00e3-44c1-9305-bd063c42a008.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/baeb0199-28e3-461a-b957-9710b4b53d7f.jpg" alt="" title=""></p>
+
+<h3 id="本文一些代码">本文一些代码</h3>
+
+<div id="wiz_cm_1573897273941_5257" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">&lt;footer  class="media"&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-GitHub"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-twitterhover_pc"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-weibo"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-facebook"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/a&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-linkin"&gt;&lt;/use&gt;
+&lt;/svg&gt;&lt;/a&gt;
+&lt;a  href="#"&gt;
+&lt;svg  class="icon"  aria-hidden="true"&gt;
+&lt;use  xlink:href="#icon-google"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/a&gt;
+&lt;/footer&gt;</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573897273941_5257"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 728px; min-width: 378px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">footer</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"media"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-GitHub"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-twitterhover_pc"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/a&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-weibo"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/a&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-facebook"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/a&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-linkin"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;&lt;/</span><span class="cm-variable">a</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">a</span>  <span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">svg</span>  <span class="cm-keyword">class</span><span class="cm-operator">=</span><span class="cm-string">"icon"</span>  <span class="cm-variable">aria</span><span class="cm-operator">-</span><span class="cm-variable">hidden</span><span class="cm-operator">=</span><span class="cm-string">"true"</span><span class="cm-operator">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-variable">use</span>  <span class="cm-variable">xlink</span>:<span class="cm-variable">href</span><span class="cm-operator">=</span><span class="cm-string">"#icon-google"</span><span class="cm-operator">&gt;&lt;</span><span class="cm-string-2">/use&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/svg&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/a&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">&lt;</span><span class="cm-string-2">/footer&gt;</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 728px;"></div><div class="CodeMirror-gutters" style="height: 758px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p><img src="(11_3)css布局和定位_files/d80189ed-5889-413e-911b-98588a6362dc.png" alt="" title=""></p>
+
+<p><img src="(11_3)css布局和定位_files/3214905c-e77e-43db-a4aa-e5d2a3d4d461.jpg" alt="" title=""></p>
+
+<p>作业: <br>
+<a href="https://css-tricks.com/examples/ShapesOfCSS/#yin-yang" title="null">https://css-tricks.com/examples/ShapesOfCSS/#yin-yang</a> <br>
+<a href="http://js.jirengu.com/javov" title="null">http://js.jirengu.com/javov</a> <br>
+<img src="(11_3)css布局和定位_files/d49f9342-395c-4918-b817-994e21a58a1e.png" alt="" title=""></p></body></html>

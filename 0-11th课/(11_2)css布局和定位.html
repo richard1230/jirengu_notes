@@ -1,0 +1,211 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#先存储图片">先存储图片</a><br><a class="wiz_toc h1" href="#一个比较巧妙的设置宽和高的方法">一个比较巧妙的设置宽和高的方法</a><br><a class="wiz_toc h1" href="#经常考的一个css题目">经常考的一个css题目</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<p><img src="(11_2)css布局和定位_files/ed4753b1-14e6-436d-88b5-d627c6e04ec9.jpg" alt="" title=""> <br>
+mask是遮罩的意思; <br>
+写的时候：先写<code>.mask</code>,而后按tab键；</p>
+
+<p><img src="(11_2)css布局和定位_files/e9d0905f-b2a6-40f2-b20f-1f0555346e3b.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/1de18170-74dc-421d-8279-c216e392d1e6.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/71f272cb-677f-4339-908c-49fdc459bb92.jpg" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/1c02eddb-8185-4b46-8873-8698bcf4adb9.png" alt="" title=""></p>
+
+<p>效果如下: <br>
+<img src="(11_2)css布局和定位_files/5f3cc394-4842-43ba-9006-4264a683898a.jpg" alt="" title=""></p>
+
+<p>div的背景图能不能按比例缩放？ <br>
+可以,用如下属性： <br>
+可以盖住所有面积,按照比例缩放；</p>
+
+<div id="wiz_cm_1573897260537_5074" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">background-size:cover;</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573897260537_5074"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 32px; min-width: 180.734px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">background</span><span class="cm-operator">-</span><span class="cm-variable">size</span>:<span class="cm-variable">cover</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 32px;"></div><div class="CodeMirror-gutters" style="height: 62px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p><img src="(11_2)css布局和定位_files/42599dab-2362-4296-94e0-5bd85eca9c03.png" alt="" title=""> <br>
+<img src="(11_2)css布局和定位_files/484a1c22-e8e8-4600-b461-772dd8f6b551.jpg" alt="" title=""></p>
+
+<p>不管图片多宽,这个图片会自适应；</p>
+
+<p><img src="(11_2)css布局和定位_files/1d0230ba-206e-428c-9bd6-876dcd15e96b.jpg" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/822c468f-28d5-46ff-92ed-530ab2ff81d0.jpg" alt="" title=""></p>
+
+<p>下面做这个卡片;</p>
+
+<p><img src="(11_2)css布局和定位_files/a55c517e-3d99-4a35-acbf-837c7ecb2866.jpg" alt="" title=""></p>
+
+<p>(github bug) <br>
+保存，有时候github会出bug，需要加一个index.html(就是你的主要文档) <br>
+<img src="(11_2)css布局和定位_files/867ead0d-8119-4eaa-a61a-a10aafac1209.png" alt="" title=""> <br>
+<img src="(11_2)css布局和定位_files/10c8d45d-b5b9-4cef-bc24-5c03786efae5.jpg" alt="" title=""></p>
+
+<p>下面来做卡片了: <br>
+前奏: <br>
+这里删掉profile是因为他们没有意义:</p>
+
+<p><img src="(11_2)css布局和定位_files/f9c8aa1b-cbdd-4107-a511-26db0f55ce72.png" alt="" title=""></p>
+
+<p>添加一句:</p>
+
+<p><img src="(11_2)css布局和定位_files/37433a34-1c36-40d3-b3fb-229e6c5a8c73.png" alt="" title=""></p>
+
+<p>发现没有效果: <br>
+用开发者 工具,发现了错误; <br>
+<img src="(11_2)css布局和定位_files/ab3a5862-3d27-410f-8818-1a68f8eae111.jpg" alt="" title=""></p>
+
+<p>改动一下: <br>
+<img src="(11_2)css布局和定位_files/8f463613-84d8-469f-83e4-5476d1e7726c.png" alt="" title=""> <br>
+出效果了: <br>
+<img src="(11_2)css布局和定位_files/ddd4ee3a-b25a-437f-9c21-f6836405ee47.jpg" alt="" title=""></p>
+
+<p>可以调试开发者工具的位置:</p>
+
+<p><img src="(11_2)css布局和定位_files/82fc7390-95f2-4fa2-ba51-f74924d66b96.jpg" alt="" title=""></p>
+
+<p>最大940px;此时如果屏幕比像素小,它会自适应； <br>
+如果屏幕比像素大,它最大940px;(如果写宽度就没有自适应) <br>
+<img src="(11_2)css布局和定位_files/e2927ed0-4a95-4c41-87fa-1a0abbe62670.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/4b2cfedb-9be4-4e7d-bf85-d30c5c7603f4.jpg" alt="" title=""></p>
+
+<p>让其居中:</p>
+
+<div id="wiz_cm_1573897260505_7919" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">margin-left:auto;
+margin-right:auto;
+</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573897260505_7919"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 80px; min-width: 149.141px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">margin</span><span class="cm-operator">-</span><span class="cm-variable">left</span>:<span class="cm-variable">auto</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">margin</span><span class="cm-operator">-</span><span class="cm-variable">right</span>:<span class="cm-variable">auto</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 80px;"></div><div class="CodeMirror-gutters" style="height: 110px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p><img src="(11_2)css布局和定位_files/b19ffbba-758b-404f-8c2c-2dee0e172cca.png" alt="" title=""></p>
+
+<p>效果如下: <br>
+<img src="(11_2)css布局和定位_files/7483ea89-5615-42fe-80cb-1888ac6264e3.jpg" alt="" title=""></p>
+
+<p>改背景: <br>
+<img src="(11_2)css布局和定位_files/0de6e375-c37b-4c3d-809d-f0a6ddb5ed09.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/02d06869-3069-4d4d-80b6-79ce03274b26.png" alt="" title=""></p>
+
+<p>效果:</p>
+
+<p><img src="(11_2)css布局和定位_files/0ce0720f-923a-48d2-8dfa-cbcc589e825e.jpg" alt="" title=""></p>
+
+<p>下面要设置卡片里面的图片: <br>
+11'49"</p>
+
+<h2 id="先存储图片">先存储图片</h2>
+
+<p><img src="(11_2)css布局和定位_files/2211a1f8-d3a7-4918-9086-ab5f2d6c0596.jpg" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/f4cc7249-a3e2-4120-b978-5cb8aaee2f5c.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/d49ccbda-09e2-48ab-bb28-004285a3bec9.jpg" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/adeb1d6a-73e0-4bc6-8221-ed0d3c71b465.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/f6759626-5d47-4501-b9da-93918696de0d.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/55acff31-6e42-441b-bdab-4f18b50434c8.jpg" alt="" title=""></p>
+
+<p>这个hello的宽度和高度是70,29px； <br>
+但是span是不接受设置宽和高的;咋办?</p>
+
+<p><img src="(11_2)css布局和定位_files/62fcaee1-1c3b-4ba8-aaa9-5dff3070f76c.png" alt="" title=""> <br>
+再按tab键：</p>
+
+<p><img src="(11_2)css布局和定位_files/15ad86b2-e66a-42e2-b08d-4573c364beab.png" alt="" title=""></p>
+
+<p>如果写了高度,就要写垂直居中了; <br>
+<img src="(11_2)css布局和定位_files/369fab3c-9b9d-40c5-80ca-e50834a6c49e.png" alt="" title=""> <br>
+height与line-height要一样; <br>
+但是这个有潜在的bug; <br>
+ta:c  再加一个 tab <br>
+<img src="(11_2)css布局和定位_files/ccf5c81e-12df-4923-ad0b-f989b9e4db8a.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/422f983e-2e55-4bcf-bb5a-dce253e013e0.png" alt="" title=""></p>
+
+<h2 id="一个比较巧妙的设置宽和高的方法">一个比较巧妙的设置宽和高的方法</h2>
+
+<p>上面这种写法存在潜在bug，一般从内向外做; <br>
+目标宽和高分别是70和29px; <br>
+先看一下现在的宽和高：<code>40.15 * 29</code> <br>
+宽度上面的差距：70 - 40.15 = 70-40 =30，那么可以左右各给15px的padding;</p>
+
+<p><img src="(11_2)css布局和定位_files/21187432-01b7-4925-8dab-a279041b613f.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/9ecb20f0-5035-4831-8961-47398805c6c0.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/2b32a301-f5aa-4270-8eb6-42632f4f7c1e.png" alt="" title=""></p>
+
+<p>现在宽度基本达到这个要求了; <br>
+<img src="(11_2)css布局和定位_files/38221005-3344-4e60-a15e-d75443c7c09d.jpg" alt="" title=""> <br>
+高度:目标高度为29,我现在的高度为21左右;再加8px，上下各4px即可;</p>
+
+<p><img src="(11_2)css布局和定位_files/c2aecc34-7522-4447-896f-b8d9a8f0471f.png" alt="" title=""></p>
+
+<p>现在的效果:</p>
+
+<p><img src="(11_2)css布局和定位_files/9cd999ce-d199-47cd-9a29-615ec880b0ec.jpg" alt="" title=""></p>
+
+<p>不管里面字有多少都是很好看;(不管需求是多少,一般呈现出来的格式是不会变的)</p>
+
+<p><img src="(11_2)css布局和定位_files/486273ee-083a-475a-963a-612c54648d86.png" alt="" title=""> <br>
+最好再加上一句line-height;(防止不同的机器上出现不同的高度)</p>
+
+<p><img src="(11_2)css布局和定位_files/46df5cd1-de6f-46d3-9ea1-2f6be66088d6.png" alt="" title=""></p>
+
+<h2 id="经常考的一个css题目">经常考的一个css题目</h2>
+
+<p>hell0这个logo下面的尖角怎么做? <br>
+<strong>即如何用css画一个三角形？</strong> <br>
+<img src="(11_2)css布局和定位_files/dd8b7baf-8bd0-4e5f-b488-c0006443fcf7.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/c1421eb4-bfad-407e-9513-bb03cae8e9b4.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/6372dbbb-6758-4262-8bf2-5ad1e84df56b.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/70c81680-807c-4ed8-8986-ba9a043be7f0.png" alt="" title=""></p>
+
+<p>此时绿色的三角形就是我们需要的; <br>
+<img src="(11_2)css布局和定位_files/fb067ebd-1322-47d9-bb78-aa882be5f0d9.png" alt="" title=""> <br>
+看看其是怎么变的: <br>
+<img src="(11_2)css布局和定位_files/74491002-4fa4-48b9-96f7-2ed768992ddd.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/b1b861cd-4be6-42e5-bd0f-cb30cbe7a5e0.png" alt="" title=""></p>
+
+<p>最后用这几条指令即可:</p>
+
+<p><img src="(11_2)css布局和定位_files/ee0bc4cb-dd87-4738-93d3-e1b464c9ea33.png" alt="" title=""></p>
+
+<p>如何加:</p>
+
+<p><img src="(11_2)css布局和定位_files/d9cb9c29-1a7a-44bd-8284-d510c660f292.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/dfe98dbc-e632-4c1a-a4d3-9877113d1341.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/c99c5d9e-5bf1-465e-a841-786e051d2dda.jpg" alt="" title=""></p>
+
+<p>子元素相对于父元素定位,子元素为下面这个,父元素为上面这个;</p>
+
+<p><img src="(11_2)css布局和定位_files/775d8d43-3e09-4755-a75c-45c9b4d745ec.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/22312d02-3440-4363-b166-958325e4d35a.jpg" alt="" title=""></p>
+
+<p>position ：fixed可以让你脱离文档流相对于窗口定位; <br>
+position: absolute;可以让你相对于主线中的第一个relative定位; <br>
+<img src="(11_2)css布局和定位_files/ae5adddc-d386-4267-9c25-55061846468d.png" alt="" title=""></p>
+
+<p><code>top:100%</code>:表示三角形上边缘距离上边的高度为高度的100% <br>
+<img src="(11_2)css布局和定位_files/e408bc46-f26b-4224-a7b6-55aecee2a3b9.jpg" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/ea814162-6a69-4ec6-974a-4d607b8a5e12.png" alt="" title=""></p>
+
+<p><img src="(11_2)css布局和定位_files/4e648adb-276e-4e3f-9e3b-210a4faebaeb.jpg" alt="" title=""></p></body></html>

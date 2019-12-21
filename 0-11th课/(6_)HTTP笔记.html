@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#定义">定义</a><br><a class="wiz_toc h1" href="#HTTP请求重要">HTTP请求(重要)</a><br><a class="wiz_toc h2" href="#对服务器的测试">对服务器的测试</a><br><a class="wiz_toc h1" href="#chrome实验">chrome实验</a><br><a class="wiz_toc h1" href="#响应">响应</a><br><a class="wiz_toc h2" href="#响应的格式重要">响应的格式(重要)</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<h2 id="定义">定义</h2>
+
+<p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。</p>
+
+<p>HTTP的作用就是指导浏览器和服务器如何进行沟通。那么又是如何实现沟通的呢？</p>
+
+<p><img src="(6_)HTTP笔记_files/634789f8-cdd5-46c1-a7be-5c8fbc5ab135.jpg" alt="" title=""></p>
+
+<p>如上图所示:客户端的浏览器发起请求---&gt;服务器在其80端口接收到请求之后，然后根据客户端的请求发出对应响应返回内容,将相关数据发送给客户端----&gt;浏览器负责下载响应内容;</p>
+
+<p>tips: <br>
+80端口专门用来服务HTTP; <br>
+如下图这样的一个URL,构成如下:</p>
+
+<p><img src="(6_)HTTP笔记_files/4e7e786b-f543-494f-b5d2-225fa80e95fd.png" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/10d6c9e6-480a-40c6-a11c-a955282cc5c7.png" alt="" title=""></p>
+
+<h2 id="HTTP请求重要">HTTP请求(重要)</h2>
+
+<p>1.发送请求的格式: <br>
+第一部分: 动词 路径 协议/版本 <br>
+第二部分: key1 : value1 <br>
+第二部分：key2 : value2 <br>
+第二部分：key3 : value3 <br>
+第二部分：Content-Type : application / x-www-form-urlencoded                        (我要上传的数据内容的类型和格式) <br>
+第二部分： Content-Length：10 (我要上传的数据的长度) <br>
+第二部分：HOST：www.baidu.com  //目标域名 <br>
+第二部分：User-Agent : Curl/7.54.0  //你通过哪个软件(工具发起请求的) <br>
+第三部分： <br>
+第四部分：要上传的数据</p>
+
+<ul>
+<li>请求最多包含四部分,至少三部分,也就是第四部分 可以空着;</li>
+<li>第三部分永远都是一个回车(/n)主要作用就是划出三四部分的界限;</li>
+<li>动词主要有GET(获取),POST(上传数据:主要是用户名,密码,头像之类的数据),PUT(整体更新，就是将你上传的所有数据全都替换掉),PATCH(局部更新，就是将你上传的数据中的一部分更新掉),DELETE(删除)等；</li>
+<li>这里的路径包括查询参数,但是不包括锚点</li>
+<li>如果你不写路径,默认为<code>/</code>;（路径必须以<code>/</code>开头）</li>
+<li>第二部分的Content-Type标注了第四部分的格式 <br>
+注:不按照协议来,会报错的! <br>
+下面这个图很清晰的表述了请求与响应的格式：</li>
+</ul>
+
+<p><img src="(6_)HTTP笔记_files/635c107e-1c1a-422d-91e9-fe74715d2a85.jpg" alt="" title=""></p>
+
+<h3 id="对服务器的测试">对服务器的测试</h3>
+
+<p>测试1： <br>
+<img src="(6_)HTTP笔记_files/22989be4-7d58-4d0a-a72a-690dbad46051.jpg" alt="" title=""></p>
+
+<div id="wiz_cm_1573896941926_9092" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">curl -s -v -H "Host: www.qq.com" -- "https://www.baidu.com"</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573896941926_9092"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 32px; min-width: 472.922px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">curl</span> <span class="cm-operator">-</span><span class="cm-variable">s</span> <span class="cm-operator">-</span><span class="cm-variable">v</span> <span class="cm-operator">-</span><span class="cm-variable">H</span> <span class="cm-string">"Host: www.qq.com"</span> <span class="cm-operator">--</span> <span class="cm-string">"https://www.baidu.com"</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 32px;"></div><div class="CodeMirror-gutters" style="height: 62px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p>这句话的意思是:对百度服务器说，有没有qq.com的页面，这里会出错!</p>
+
+<p>测试2: <br>
+<img src="(6_)HTTP笔记_files/4b3e2e16-dda5-4344-8635-3f3dcc0f4b34.jpg" alt="" title=""></p>
+
+<div id="wiz_cm_1573896941897_2204" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">curl -s -v -- "https://www.baidu.com/s?wd=JavaScript"</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573896941897_2204"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 32px; min-width: 425.562px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">curl</span> <span class="cm-operator">-</span><span class="cm-variable">s</span> <span class="cm-operator">-</span><span class="cm-variable">v</span> <span class="cm-operator">--</span> <span class="cm-string">"https://www.baidu.com/s?wd=JavaScript"</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 32px;"></div><div class="CodeMirror-gutters" style="height: 62px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p>GET和协议之间的就是路径,包含查询字符串的; <br>
+测试3： <br>
+<img src="(6_)HTTP笔记_files/8533bf79-6cc2-4c16-878b-ed5d0737268b.jpg" alt="" title=""> <br>
+服务器是不看路径的；如上图</p>
+
+<p>测试4: <br>
+ 如果你不写路径,默认为<code>/</code> <br>
+<img src="(6_)HTTP笔记_files/982bd046-4af3-4a99-a294-7fa070318460.jpg" alt="" title=""></p>
+
+<p>Content-Type : application / x-www-form-urlencoded: <br>
+这里的<code>application</code>表示一个应用数据; <br>
+x-www-form-urlencoded：<code>x</code>表示这是一个实验属性，没有被写入规范的属性!<code>form</code>表单;<code>urlencoded</code>以urlencoded的形式给其压缩;</p>
+
+<h2 id="chrome实验">chrome实验</h2>
+
+<p><img src="(6_)HTTP笔记_files/c4fab3bd-4b81-4018-a535-27a16813a7cd.jpg" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/04179428-1623-446e-8177-d0b170caf67b.jpg" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/e58a89ef-d45f-4af7-a3d4-ef5ad692a952.jpg" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/514e18de-793a-4ccc-8aee-cd4001446dd8.png" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/4d3bcdf4-f11a-4859-95b9-4469e532dfcb.png" alt="" title=""></p>
+
+<p>可以看到http的请求;</p>
+
+<p>下面看一个post的请求: <br>
+要在Preserve Log这里打钩: <br>
+<img src="(6_)HTTP笔记_files/e16ddd8e-e0a8-4f74-a413-33fc8a63f9bb.jpg" alt="" title=""></p>
+
+<p><img src="(6_)HTTP笔记_files/6ad961f0-ba06-47be-b874-da55d1ac2d05.png" alt="" title=""> <br>
+可以看到自己的用户名和密码:</p>
+
+<p>由于这里是https协议,all数据在网络上传输的时候是需要加密的; <br>
+<img src="(6_)HTTP笔记_files/c7af3608-7072-4011-9b78-df3dec9c3051.png" alt="" title=""></p>
+
+<h2 id="响应">响应</h2>
+
+<p>content-length和content-type需要了解一下: <br>
+我们请求的时候会带上我们的数据,返回的时候会带上百度的数据(响应的格式，这里为文本,以及响应的长度); <br>
+server:指的是百度的一个前端服务器(在百度那里的,不是我们这里,这是它为了方便调试的,比如说哪一台出错了,就可以调试哪一台); <br>
+第三部分也是回车，就是图里面空的那一行; <br>
+<img src="(6_)HTTP笔记_files/f7f03aea-a9fa-42cb-a840-eb203a41c36f.jpg" alt="" title=""> <br>
+理论上来说百度首页是不接受post的;</p>
+
+<h3 id="响应的格式重要">响应的格式(重要)</h3>
+
+<p><strong>1.协议/版本号 状态码 状态解释 <br>
+2.key1: value1 <br>
+2.key2: value2 <br>
+2.Content-Length:17931 <br>
+2.Content-Type:text/html <br>
+3. <br>
+4.要下载的内容</strong></p>
+
+<p>状态码:需要记忆，是服务器对浏览器要说的话:</p>
+
+<ul>
+<li>1xx:不常用</li>
+<li>2xx:表示成功，200表示普通成功(如果是get，则返回200给你);204表示创建成功(如果你是post,服务器就可能返回一个204给你)；</li>
+<li>3xx:表示你滚吧；(301:表示以前在这里的那个人永久搬走了,我会在第二部分告诉你它搬到哪里了；302：表示他临时不在,可能过几天就回了)</li>
+<li>4xx:表示你错了(比如你输入的网址有错误)</li>
+<li><span>5xx:表示我错了==</span></li>
+<li><span>状态解释没什么用</span></li>
+<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式(<strong>第二部分要与第四部分对应</strong>)；Content-Type 表示的是响应的内容的格式,第四部分为响应的内容！！</li>
+<li>第 2 部分中的 Content-Type 遵循 MIME 规范</li>
+</ul>
+
+<p><img src="(6_)HTTP笔记_files/2f36dbf6-0bb7-47ad-8e33-26d5d87eb82d.png" alt="" title=""> <br>
+响应部分的第一部分和第二部分在Headers里面；</p>
+
+<p><img src="(6_)HTTP笔记_files/0d59cbd2-82da-4507-91f2-41c144543be5.png" alt="" title=""> <br>
+第四部分在response里面;</p></body></html>

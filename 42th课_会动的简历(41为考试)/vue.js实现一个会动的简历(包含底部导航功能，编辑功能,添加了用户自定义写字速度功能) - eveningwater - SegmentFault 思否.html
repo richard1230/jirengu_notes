@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://segmentfault.com/a/1190000018779991 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="renderer" content="webkit"><meta property="qc:admins" content="15317273575564615446375"><meta property="og:image" content="https://cdn.segmentfault.com/v-5dcd2518/global/img/touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ"><meta name="apple-itunes-app" content="app-id=958101793, app-argument="><title>vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否</title><meta name="description" content="首先要分析打字的原理实现，假设我们定义一个字符串str,它等于一长串注释加CSS代码，并且我们看到，当css代码写完一个分号的时候，它写的样式就会生效。我们知道要想让一段CSS代码在页面生效，只需要将其放在一对&amp;lt;style&amp;gt;标签对中即可。比如:"><meta name="keywords" content="html,css,javascript"><link rel="search" type="application/opensearchdescription+xml" href="https://segmentfault.com/opensearch.xml" title="SegmentFault"><link rel="shortcut icon" href="https://cdn.segmentfault.com/v-5dcd2518/global/img/favicon.ico"><link rel="apple-touch-icon" href="https://cdn.segmentfault.com/v-5dcd2518/global/img/touch-icon.png"><meta name="msapplication-TileColor" content="#009a61"><meta name="msapplication-square150x150logo" content="https://cdn.segmentfault.com/v-5dcd2518/global/img/touch-icon.png"><meta name="baidu_union_verify" content="bcf7fd80dca60d53d46d5b46e1b990ca"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新问题" href="https://segmentfault.com/feeds/questions"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新文章" href="https://segmentfault.com/feeds/blogs"><link rel="stylesheet" href="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/global.css"><link rel="stylesheet" href="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/blog.css"><link rel="stylesheet" href="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/responsive.css"><script src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/hm.js"></script><script async="" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/analytics.js"></script><script type="text/javascript" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/spcjs.php"></script><script async="" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/f.txt"></script><script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6330872677300335",
+            enable_page_level_ads: true
+        });
+    </script><script charset="utf-8" id="ParadigmSDK" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/ParadigmSDK_v2.js" data="216" defsi="594"></script><script>
+    ParadigmSDK.init("46e957bd9dea4acdaa15b4b64aff728f");
+    ParadigmSDK.trackDetailPageShow();
+</script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://cdn.segmentfault.com/v-5dcd2518/3rd/highlightjs/highlight.pack.js" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/highlight.pack.js"></script><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head><!-- 推荐引擎 --><body data-mod="blog" class="blog-post "><div id="MathJax_Message" style="display: none;"></div><!--[if lt IE 9]><div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说 <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div><![endif]--><img id="icon4weChat" style="height: 0;width: 0;" data-src="https://cdn.segmentfault.com/v-5dcd2518/global/img/touch-icon-512.png"><div id="gridMapHoverBox" style="position:absolute; border: 1px solid #009a61; z-index:99; font-size: 10px; background:#fff"></div><div class="global-nav sf-header sf-header--index"><div class="bottom-nav visible-xs visible-sm"><div class="opts"><a class="opts-group " href="https://segmentfault.com/"><i class="fa fa-home" aria-hidden="true"></i><span>首页</span></a><a class="opts-group " href="https://segmentfault.com/questions"><i class="fa fa-comments" aria-hidden="true"></i><span>问答</span></a><a class="opts-group active" href="https://segmentfault.com/blogs"><i class="fa fa-pencil-square" aria-hidden="true"></i><span>专栏</span></a><a class="opts-group " href="https://segmentfault.com/lives"><i class="fa fa-play-circle" aria-hidden="true"></i><span>讲堂</span></a><div class="opts-group"><div class="btn-group dropup"><i class="fa fa-bars dropdown hoverDropdown" data-toggle="dropdown" aria-hidden="true"><span>更多</span></i><ul class="dropdown-menu"><li><a href="https://segmentfault.com/jobs">职位</a></li><li><a href="https://segmentfault.com/events">活动</a></li><li><a href="https://segmentfault.com/tags">标签</a></li><li><a href="https://segmentfault.com/badges">徽章</a></li></ul></div></div></div></div><nav class="container nav"><div class="visible-xs visible-sm header-response"><a href="https://segmentfault.com/search" style="display:block"><i class="fa fa-search" aria-hidden="true"></i></a><div class="sf-header__logo sf-header__logo--response"><h1><a href="https://segmentfault.com/" style="height:24px; background-size: auto 24px;"></a></h1></div><a href="https://segmentfault.com/user/login" class="pull-right login-btn"><i class="fa fa-user" aria-hidden="true"></i></a></div><script>
+mobileScroll(
+    function(direction) { 
+        try {
+            if (direction === 'down') {
+                document.querySelector('.bottom-nav').classList.add('hidden')
+            } else {
+                document.querySelector('.bottom-nav').classList.remove('hidden')
+            }
+        } catch(err) {}
+    }
+);    
+function mobileScroll( fn ) {
+    var beforeScrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+        fn = fn || function() {};
+    window.addEventListener("scroll", function() {
+        var afterScrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+            delta = afterScrollTop - beforeScrollTop;
+        if( delta === 0 ) return false;
+        fn( delta > 0 ? "down" : "up" );
+        beforeScrollTop = afterScrollTop;
+    }, false);
+}
+</script><div class="row hidden-xs hidden-sm"><div class="col-sm-8 col-md-9 col-lg-9"><div class="sf-header__logo"><h1><a href="https://segmentfault.com/">SegmentFault</a></h1></div><div><ul class="menu list-inline pull-left hidden-xs"><li class="menu__item"><a href="https://segmentfault.com/" class="">首页</a></li><li class="menu__item"><a href="https://segmentfault.com/questions" class="">问答</a></li><li class="menu__item"><a href="https://segmentfault.com/blogs" class="active-nav">专栏</a></li><li class="menu__item"><a class=" " href="https://segmentfault.com/lives">课程</a></li><li class="menu__item"><a href="https://segmentfault.com/events" class="">活动</a></li><li class="menu__item menu__item--more dropdown"><a href="https://segmentfault.com/a/1190000018779991##" class="dropdown-toggle dropdownBtn" data-toggle="dropdown">
+                                        发现<i class="fa fa-caret-down" style="font-size: 14px;margin-left: 5px;" aria-hidden="true"></i></a><div class="dropdown-block hidden"><ul class="dropdown-content-menu"><li><a href="https://segmentfault.com/groups">圈子</a></li><li><a href="https://segmentfault.com/tags">标签</a></li><li><a href="https://segmentfault.com/groups?tab=jobs">酷工作</a></li><li><a href="https://segmentfault.com/users">排行榜</a></li><li><a href="https://segmentfault.com/badges">徽章</a></li><li><a href="https://segmentfault.com/notes">笔记</a></li><li><a href="https://docs.segmentfault.com/" target="_blank">开发手册<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li><li><a href="https://business.segmentfault.com/ads?utm_source=sf-header" target="_blank">广告投放<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li></ul></div></li><li class="menu__item visible-sm-inline-block"><a href="https://segmentfault.com/search"><span class="glyphicon glyphicon-search" style="vertical-align: middle;"></span></a></li></ul><form action="https://segmentfault.com/search" class="header-search  hidden-sm hidden-xs pull-right"><button class="btn btn-link"><span class="sr-only">搜索</span><span class="glyphicon glyphicon-search"></span></button><input id="searchBox" name="q" type="text" placeholder="搜索问题或关键字" class="form-control" value=""></form></div></div><div class="col-sm-4 col-md-3 col-lg-3 text-right"><ul class="opts list-inline hidden-xs"><li class="opts__item"><a href="https://segmentfault.com/user/login" class="SFRegister btn-signin" style="margin-bottom:2px;">立即登录</a><a href="https://segmentfault.com/user/register" class="SFLogin ml10 btn-signup" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Button&#39;, &#39;Click&#39;, &#39;Login&#39;]);">免费注册</a></li></ul></div></div></nav></div>
+    
+<input id="articleId" value="1190000018779991" class="hidden">
+
+<div class="wrap" data-blogid="1200000016693821">
+
+    <div class="text-center block hidden-xs">
+        <script type="text/javascript">
+            OA_show(2);
+        </script>
+    </div>
+    
+    <div class="container mt15" style="position:relative">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 main ">
+                                <ol class="breadcrumb mb15">
+                    <li><a href="https://segmentfault.com/blogs">专栏</a></li>
+                                        <li><a href="https://segmentfault.com/blog/eveningwater">eveningwater</a></li>
+                                        <li class="active">文章详情</li>
+                </ol>
+                                <div class="post-topheader custom-eveningwater pt0">
+                    <div class="mb20">
+                        <div class="block-for-right-border">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                
+
+                                    <div class="post-topheader__info" data-username="夕水" data-userslug="xishui_5ac9a340a5484" data-useravatar="https://avatar-static.segmentfault.com/807/189/80718919-5cc81ce81affe_big64">
+
+
+                                        <div class="article__author clearfix">
+                                            <div class="article__authorleft">
+                                                <a href="https://segmentfault.com/u/xishui_5ac9a340a5484">
+                                                    <img class="avatar-40" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/80718919-5cc81ce81affe_big64" alt="夕水">
+                                                </a>
+                                            </div>
+                                            <div class="article__authorright">
+                                                <div class="article__authormeta">
+                                                <a href="https://segmentfault.com/u/xishui_5ac9a340a5484" class="mr5"><strong>夕水</strong></a>
+                                        
+                                                
+                                                                                                <img src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/rp.svg" class="mr5"><span style="color:#BF7158" class="mr10">2.5k</span>
+
+                                                                                                发布于
+                                                <a href="https://segmentfault.com/blog/eveningwater">eveningwater</a>
+                                                
+                                                
+                                                <span class="hidden-xs">
+                                                                                                                                                          <button type="button" class="btn btn-xs btn-success follow-article ml10" data-do="follow" data-type="blog" data-id="1200000016693821">关注专栏
+                                                       </button>
+                                                                                                                                                   </span>
+                                                </div>
+                                                
+                                                <span style="display: block">
+                                                    4月7日发布
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <h1 class="h1 post-topheader__info--title" id="articleTitle" data-id="1190000018779991">
+                                            <a href="https://segmentfault.com/a/1190000018779991"> vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能)</a>
+                                        </h1>
+
+                                        <div class="content__tech hidden-xs">
+                                            <a href="https://segmentfault.com/a/1190000018779991" class="blog-type-common blog-type-1-before" target="_blank" data-content="
+                                                                                        原创
+                                                                                        "></a>
+                                            
+                                            <ul class="taglist--inline inline-block article__title--tag mr10">
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/html/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/418/365/4183652815-1040000000089571_big64" data-placement="top" data-original-title="html" data-id="1040000000089571">
+                                                                                                                      html
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/css/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/122/960/1229606535-1040000000089434_big64" data-placement="top" data-original-title="css" data-id="1040000000089434">
+                                                                                                                      css
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/javascript/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/195/823/1958237468-1040000000089436_big64" data-placement="top" data-original-title="javascript" data-id="1040000000089436">
+                                                                                                                      javascript
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+
+                                            <span>
+                                                999 次阅读
+                                                &nbsp;·&nbsp;
+                                                读完需要 69 分钟
+                                                                                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end .post-topheader -->
+
+                <div class="visible-lg">
+                    <div class="side-widget">
+                        <div class="stream__item-zan btn btn-default mt0 mb15 ml0 mr0 pt0 pb0 pl0 pr0 " id="side-widget-votes-btn">
+                            <span class="stream__item-zan-icon"></span>
+                            <span class="stream__item-zan-number" id="side-widget-votes-num">11</span>
+                        </div>
+
+                        <i class="fa fa-bookmark item " id="side-widget-bookmarks-btn"></i>
+                        <i class="fa fa-weibo item"></i>
+                        <i class="fa fa-weixin item" data-toggle="popover" data-placement="right" data-original-title="" title=""></i>
+                        <i class="fa fa-twitter item"></i>
+                        <i class="fa fa-facebook item"></i>
+                        <i class="fa fa-arrow-up item"></i>
+                    </div>
+                </div>
+
+                
+                <div class="article fmt article__content" data-id="1190000018779991" data-license="cc">
+                    
+<p>在网上看到一个这样的网站，<a href="https://www.strml.net/" rel="nofollow noreferrer" target="_blank">STRML</a>它的效果看着十分有趣,如下图所示:<br><span class="img-wrap"><img referrerpolicy="no-referrer" data-src="/img/bVbqXwx?w=1505&amp;h=815" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/bVbqXwx" alt="图片描述" title="图片描述" style="cursor: pointer; display: inline;"></span></p>
+<p>这个网站是用<code>react.js</code>来写的，于是，我就想着用<code>vue.js</code>也来写一版，开始撸代码。</p>
+<p>首先要分析打字的原理实现，假设我们定义一个字符串<code>str</code>,它等于一长串注释加<code>CSS</code>代码，并且我们看到，当<code>css</code>代码写完一个分号的时候，它写的样式就会生效。我们知道要想让一段<code>CSS</code>代码在页面生效，只需要将其放在一对<code>&lt;style&gt;</code>标签对中即可。比如:</p>
+<div class="widget-codetool" style="display: block;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  红色字体
+  &lt;style&gt;
+    body{
+      color:#f00;
+    }
+  &lt;/style&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" title="" data-original-title="已复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS Bin<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  红色字体
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">body</span>{
+      <span class="hljs-attribute">color</span>:<span class="hljs-number">#f00</span>;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/vavopukeya/edit?html,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。 </p>
+<p>当看到打字效果的时候，我们不难想到，这是要使用<code>间歇调用(定时函数:setInterval())</code>或<code>超时调用(延迟函数:setTimeout())</code>加<code>递归</code>去模拟实现<code>间歇调用</code>。一个包含一长串代码的字符串，它是一个个截取出来，然后分别写入页面中，在这里，我们需要用到字符串的截取方法，如<code>slice(),substr(),substring()</code>等，选择用哪个截取看个人，不过需要注意它们之间的区别。好了，让我们来实现一个简单的这样打字的效果，如下:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        var r =  document.getElementById(&#39;result&#39;);
+        var c = 0;
+        var code = &#39;body{background-color:#f00;color:#fff};&#39;
+        var timer = setInterval(function(){
+          c++;
+          r.innerHTML = code.substr(0,c);
+          if(c &gt;= code.length){
+            clearTimeout(timer);
+          }
+        },50)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt; 
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS Bin<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> r =  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>);
+        <span class="hljs-keyword">var</span> c = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> code = <span class="hljs-string">'body{background-color:#f00;color:#fff};'</span>
+        <span class="hljs-keyword">var</span> timer = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+          c++;
+          r.innerHTML = code.substr(<span class="hljs-number">0</span>,c);
+          <span class="hljs-keyword">if</span>(c &gt;= code.length){
+            clearTimeout(timer);
+          }
+        },<span class="hljs-number">50</span>)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span> 
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/jotuhaqoye/edit?html,console,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。好的，让我们来分析一下以上代码的原理,首先放一个用于包含代码显示的标签，然后定义一个包含代码的字符串，接着定义一个初始值为<code>0</code>的变量，为什么要定义这样一个变量呢？我们从实际效果中看到，它是一个字一个字的写入到页面中的。初始值是没有一个字符的，所以，我们就从第<code>0</code>个开始写入，<code>c</code>一个字一个字的加，然后不停的截取字符串，最后渲染到标签的内容当中去，当<code>c</code>的值大于等于了字符串的长度之后，我们需要清除定时器。定时函数看着有些不太好，让我们用超时调用结合递归来实现。</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+     var r =  document.getElementById(&#39;result&#39;);
+     var c = 0;
+     var code = &#39;body{background-color:#f00;color:#fff};&#39;;
+     var timer;
+     function write(){
+        c++;
+        r.innerHTML = code.substr(0,c);
+        if(c &gt;= code.length &amp;&amp; timer){
+            clearTimeout(timer)
+        }else{
+           setTimeout(write,50);
+       }
+    }
+    write();
+ &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS Bin<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+     <span class="hljs-keyword">var</span> r =  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>);
+     <span class="hljs-keyword">var</span> c = <span class="hljs-number">0</span>;
+     <span class="hljs-keyword">var</span> code = <span class="hljs-string">'body{background-color:#f00;color:#fff};'</span>;
+     <span class="hljs-keyword">var</span> timer;
+     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">write</span>(<span class="hljs-params"></span>)</span>{
+        c++;
+        r.innerHTML = code.substr(<span class="hljs-number">0</span>,c);
+        <span class="hljs-keyword">if</span>(c &gt;= code.length &amp;&amp; timer){
+            clearTimeout(timer)
+        }<span class="hljs-keyword">else</span>{
+           setTimeout(write,<span class="hljs-number">50</span>);
+       }
+    }
+    write();
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/nusapunelu/1/edit?html,console,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。</p>
+<p>好了，到此为止，算是实现了第一步，让我们继续，接下来，我们要让代码保持空白和缩进，这可以使用<code>&lt;pre&gt;</code>标签来实现，但其实我们还可以使用css代码的<code>white-space</code>属性来让一个普通的<code>div</code>标签保持这样的效果，为什么要这样做呢，因为我们还要实现一个功能，就是编辑它里面的代码，可以让它生效。更改一下代码,如下:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    #result{
+      white-space:pre-wrap;
+      oveflow:auto;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+     var r =  document.getElementById(&#39;result&#39;);
+     var c = 0;
+     var code = `
+        body{
+            background-color:#f00;
+            color:#fff;
+        }
+     `
+     var timer;
+     function write(){
+        c++;
+        r.innerHTML = code.substr(0,c);
+        if(c &gt;= code.length &amp;&amp; timer){
+            clearTimeout(timer)
+        }else{
+           setTimeout(write,50);
+       }
+    }
+    write();
+ &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS Bin<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-id">#result</span>{
+      <span class="hljs-attribute">white-space</span>:pre-wrap;
+      <span class="hljs-attribute">oveflow</span>:auto;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+     <span class="hljs-keyword">var</span> r =  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>);
+     <span class="hljs-keyword">var</span> c = <span class="hljs-number">0</span>;
+     <span class="hljs-keyword">var</span> code = <span class="hljs-string">`
+        body{
+            background-color:#f00;
+            color:#fff;
+        }
+     `</span>
+     <span class="hljs-keyword">var</span> timer;
+     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">write</span>(<span class="hljs-params"></span>)</span>{
+        c++;
+        r.innerHTML = code.substr(<span class="hljs-number">0</span>,c);
+        <span class="hljs-keyword">if</span>(c &gt;= code.length &amp;&amp; timer){
+            clearTimeout(timer)
+        }<span class="hljs-keyword">else</span>{
+           setTimeout(write,<span class="hljs-number">50</span>);
+       }
+    }
+    write();
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/tegexepupo/edit?html,console,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。</p>
+<p>接下来，我们还要让样式生效，这很简单，将代码在<code>style</code>标签中写一次即可，请看:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    #result{
+      white-space:pre-wrap;
+      overflow:auto;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+   &lt;style id=&quot;myStyle&quot;&gt;&lt;/style&gt;
+   &lt;script&gt;
+      var r = document.getElementById(&#39;result&#39;),
+          t = document.getElementById(&#39;myStyle&#39;);
+      var c = 0;
+      var code = `
+         body{
+            background-color:#f00;
+            color:#fff;
+         }
+      `;
+     var timer;
+     function write(){
+       c++;
+       r.innerHTML = code.substr(0,c);
+       t.innerHTML = code.substr(0,c);
+       if(c &gt;= code.length){
+         clearTimeout(timer);
+       }else{
+         setTimeout(write,50);
+       }
+     }
+     write();
+   &lt;/script&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt; 
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JS Bin<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-id">#result</span>{
+      <span class="hljs-attribute">white-space</span>:pre-wrap;
+      <span class="hljs-attribute">overflow</span>:auto;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myStyle"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-keyword">var</span> r = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'result'</span>),
+          t = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myStyle'</span>);
+      <span class="hljs-keyword">var</span> c = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">var</span> code = <span class="hljs-string">`
+         body{
+            background-color:#f00;
+            color:#fff;
+         }
+      `</span>;
+     <span class="hljs-keyword">var</span> timer;
+     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">write</span>(<span class="hljs-params"></span>)</span>{
+       c++;
+       r.innerHTML = code.substr(<span class="hljs-number">0</span>,c);
+       t.innerHTML = code.substr(<span class="hljs-number">0</span>,c);
+       <span class="hljs-keyword">if</span>(c &gt;= code.length){
+         clearTimeout(timer);
+       }<span class="hljs-keyword">else</span>{
+         setTimeout(write,<span class="hljs-number">50</span>);
+       }
+     }
+     write();
+   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span> 
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/losiseyegu/edit?html,console,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。</p>
+<p>我们看到代码还会有高亮效果，这可以用正则表达式来实现，比如以下一个<code>demo</code>:</p>
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;代码编辑器&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ew-code {
+            tab-size: 4;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            margin-left: .6em;
+            background-color: #345;
+            white-space: pre-wrap;
+            color: #f2f2f2;
+            text-indent: 0;
+            margin-right: 1em;
+            display: block;
+            overflow: auto;
+            font-size: 20px;
+            border-radius: 5px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.4;
+            font-family: Consolas, Monaco, &quot;宋体&quot;;
+            margin-top: 1em;
+        }
+
+        .ew-code span {
+            font-weight: bold;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;code class=&quot;ew-code&quot;&gt;
+        &amp;lt;div id=&quot;app&quot;&amp;gt;
+            &amp;lt;p&amp;gt;{{ greeting }} world!&amp;lt;/p&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &lt;/code&gt;
+    &lt;code class=&quot;ew-code&quot;&gt;
+        //定义一个javascript对象
+        var obj = { 
+            greeting: &quot;Hello,&quot; 
+        }; 
+        //创建一个实例
+        var vm = new Vue({ 
+            data: obj 
+        });
+        /*将实例挂载到根元素上*/
+        vm.$mount(document.getElementById(&#39;app&#39;));
+    &lt;/code&gt;
+    &lt;script&gt;
+        var lightColorCode = {
+            importantObj: [&#39;JSON&#39;, &#39;window&#39;, &#39;document&#39;, &#39;function&#39;, &#39;navigator&#39;, &#39;console&#39;, &#39;screen&#39;, &#39;location&#39;],
+            keywords: [&#39;if&#39;, &#39;else if&#39;, &#39;var&#39;, &#39;this&#39;, &#39;alert&#39;, &#39;return&#39;, &#39;typeof&#39;, &#39;default&#39;, &#39;with&#39;, &#39;class&#39;, &#39;export&#39;, &#39;import&#39;, &#39;new&#39;],
+            method: [&#39;Vue&#39;, &#39;React&#39;, &#39;html&#39;, &#39;css&#39;, &#39;js&#39;, &#39;webpack&#39;, &#39;babel&#39;, &#39;angular&#39;, &#39;bootstap&#39;, &#39;jquery&#39;, &#39;gulp&#39;,&#39;dom&#39;],
+            // special: [&quot;*&quot;, &quot;.&quot;, &quot;?&quot;, &quot;+&quot;, &quot;$&quot;, &quot;^&quot;, &quot;[&quot;, &quot;]&quot;, &quot;{&quot;, &quot;}&quot;, &quot;|&quot;, &quot;\\&quot;, &quot;(&quot;, &quot;)&quot;, &quot;/&quot;, &quot;%&quot;, &quot;:&quot;, &quot;=&quot;, &#39;;&#39;]
+        }
+        function setHighLight(el) {
+            var htmlStr = el.innerHTML;
+            //匹配单行和多行注释
+            var regxSpace = /(\/\/\s?[^\s]+\s?)|(\/\*(.|\s)*?\*\/)/gm,
+                matchStrSpace = htmlStr.match(regxSpace),
+                spaceLen;
+            //匹配特殊字符
+            var regxSpecial = /[`~!@#$%^&amp;.{}()_\-+?|]/gim,
+                matchStrSpecial = htmlStr.match(regxSpecial),
+                specialLen;
+            var flag = false;
+            if(!!matchStrSpecial){
+                    specialLen = matchStrSpecial.length;
+                }else{
+                    specialLen = 0;
+                    return;
+                }
+                for(var k = 0;k &lt; specialLen;k++){
+                    htmlStr = htmlStr.replace(matchStrSpecial[k],&#39;&lt;span style=&quot;color:#b9ff01;&quot;&gt;&#39; + matchStrSpecial[k] + &#39;&lt;/span&gt;&#39;);
+                }
+            for (var key in lightColorCode) {
+                if (key === &#39;keywords&#39;) {
+                    lightColorCode[key].forEach(function (imp) {
+                        htmlStr = htmlStr.replace(new RegExp(imp, &#39;gim&#39;), &#39;&lt;span style=&quot;color:#00ff78;&quot;&gt;&#39; + imp + &#39;&lt;/span&gt;&#39;)
+                    })
+                    flag = true;
+                } else if (key === &#39;importantObj&#39;) {
+                    lightColorCode[key].forEach(function (kw) {
+                        htmlStr = htmlStr.replace(new RegExp(kw, &#39;gim&#39;), &#39;&lt;span style=&quot;color:#ec1277;&quot;&gt;&#39; + kw + &#39;&lt;/span&gt;&#39;)
+                    })
+                    flag = true;
+                } else if (key === &#39;method&#39;) {
+                    lightColorCode[key].forEach(function (mt) {
+                        htmlStr = htmlStr.replace(new RegExp(mt, &#39;gim&#39;), &#39;&lt;span style=&quot;color:#52eeff;&quot;&gt;&#39; + mt + &#39;&lt;/span&gt;&#39;)
+                    })
+                    flag = true;
+                }
+            }
+            if (flag) {
+                if (!!matchStrSpace) {
+                    spaceLen = matchStrSpace.length;
+                } else {
+                    spaceLen = 0;
+                    return;
+                }
+                for(var i = 0;i &lt; spaceLen;i++){
+                    var curFont;
+                    if(window.innerWidth &lt;= 1200){
+                        curFont = &#39;12px&#39;;
+                    }else{
+                        curFont = &#39;14px&#39;;
+                    }
+                    htmlStr = htmlStr.replace(matchStrSpace[i],&#39;&lt;span style=&quot;color:#899;font-size:&#39;+curFont+&#39;;&quot;&gt;&#39; + matchStrSpace[i] + &#39;&lt;/span&gt;&#39;);
+                }
+                el.innerHTML = htmlStr;
+            }
+        }
+        var codes = document.querySelectorAll(&#39;.ew-code&#39;);
+        for (var i = 0, len = codes.length; i &lt; len; i++) {
+            setHighLight(codes[i])
+        }
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>代码编辑器<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        * {
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+        }
+
+        <span class="hljs-selector-class">.ew-code</span> {
+            <span class="hljs-attribute">tab-size</span>: <span class="hljs-number">4</span>;
+            <span class="hljs-attribute">-moz-tab-size</span>: <span class="hljs-number">4</span>;
+            <span class="hljs-attribute">-o-tab-size</span>: <span class="hljs-number">4</span>;
+            <span class="hljs-attribute">margin-left</span>: .<span class="hljs-number">6em</span>;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#345</span>;
+            <span class="hljs-attribute">white-space</span>: pre-wrap;
+            <span class="hljs-attribute">color</span>: <span class="hljs-number">#f2f2f2</span>;
+            <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">0</span>;
+            <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">1em</span>;
+            <span class="hljs-attribute">display</span>: block;
+            <span class="hljs-attribute">overflow</span>: auto;
+            <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">font-style</span>: normal;
+            <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
+            <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;
+            <span class="hljs-attribute">font-family</span>: Consolas, Monaco, <span class="hljs-string">"宋体"</span>;
+            <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>;
+        }
+
+        <span class="hljs-selector-class">.ew-code</span> <span class="hljs-selector-tag">span</span> {
+            <span class="hljs-attribute">font-weight</span>: bold;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ew-code"</span>&gt;</span>
+        &amp;lt;div id="app"&amp;gt;
+            &amp;lt;p&amp;gt;{{ greeting }} world!&amp;lt;/p&amp;gt;
+        &amp;lt;/div&amp;gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ew-code"</span>&gt;</span>
+        //定义一个javascript对象
+        var obj = { 
+            greeting: "Hello," 
+        }; 
+        //创建一个实例
+        var vm = new Vue({ 
+            data: obj 
+        });
+        /*将实例挂载到根元素上*/
+        vm.$mount(document.getElementById('app'));
+    <span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> lightColorCode = {
+            <span class="hljs-attr">importantObj</span>: [<span class="hljs-string">'JSON'</span>, <span class="hljs-string">'window'</span>, <span class="hljs-string">'document'</span>, <span class="hljs-string">'function'</span>, <span class="hljs-string">'navigator'</span>, <span class="hljs-string">'console'</span>, <span class="hljs-string">'screen'</span>, <span class="hljs-string">'location'</span>],
+            <span class="hljs-attr">keywords</span>: [<span class="hljs-string">'if'</span>, <span class="hljs-string">'else if'</span>, <span class="hljs-string">'var'</span>, <span class="hljs-string">'this'</span>, <span class="hljs-string">'alert'</span>, <span class="hljs-string">'return'</span>, <span class="hljs-string">'typeof'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'with'</span>, <span class="hljs-string">'class'</span>, <span class="hljs-string">'export'</span>, <span class="hljs-string">'import'</span>, <span class="hljs-string">'new'</span>],
+            <span class="hljs-attr">method</span>: [<span class="hljs-string">'Vue'</span>, <span class="hljs-string">'React'</span>, <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span>, <span class="hljs-string">'js'</span>, <span class="hljs-string">'webpack'</span>, <span class="hljs-string">'babel'</span>, <span class="hljs-string">'angular'</span>, <span class="hljs-string">'bootstap'</span>, <span class="hljs-string">'jquery'</span>, <span class="hljs-string">'gulp'</span>,<span class="hljs-string">'dom'</span>],
+            <span class="hljs-comment">// special: ["*", ".", "?", "+", "$", "^", "[", "]", "{", "}", "|", "\\", "(", ")", "/", "%", ":", "=", ';']</span>
+        }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHighLight</span>(<span class="hljs-params">el</span>) </span>{
+            <span class="hljs-keyword">var</span> htmlStr = el.innerHTML;
+            <span class="hljs-comment">//匹配单行和多行注释</span>
+            <span class="hljs-keyword">var</span> regxSpace = <span class="hljs-regexp">/(\/\/\s?[^\s]+\s?)|(\/\*(.|\s)*?\*\/)/gm</span>,
+                matchStrSpace = htmlStr.match(regxSpace),
+                spaceLen;
+            <span class="hljs-comment">//匹配特殊字符</span>
+            <span class="hljs-keyword">var</span> regxSpecial = <span class="hljs-regexp">/[`~!@#$%^&amp;.{}()_\-+?|]/gim</span>,
+                matchStrSpecial = htmlStr.match(regxSpecial),
+                specialLen;
+            <span class="hljs-keyword">var</span> flag = <span class="hljs-literal">false</span>;
+            <span class="hljs-keyword">if</span>(!!matchStrSpecial){
+                    specialLen = matchStrSpecial.length;
+                }<span class="hljs-keyword">else</span>{
+                    specialLen = <span class="hljs-number">0</span>;
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>;k &lt; specialLen;k++){
+                    htmlStr = htmlStr.replace(matchStrSpecial[k],<span class="hljs-string">'&lt;span style="color:#b9ff01;"&gt;'</span> + matchStrSpecial[k] + <span class="hljs-string">'&lt;/span&gt;'</span>);
+                }
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> lightColorCode) {
+                <span class="hljs-keyword">if</span> (key === <span class="hljs-string">'keywords'</span>) {
+                    lightColorCode[key].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">imp</span>) </span>{
+                        htmlStr = htmlStr.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(imp, <span class="hljs-string">'gim'</span>), <span class="hljs-string">'&lt;span style="color:#00ff78;"&gt;'</span> + imp + <span class="hljs-string">'&lt;/span&gt;'</span>)
+                    })
+                    flag = <span class="hljs-literal">true</span>;
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key === <span class="hljs-string">'importantObj'</span>) {
+                    lightColorCode[key].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">kw</span>) </span>{
+                        htmlStr = htmlStr.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(kw, <span class="hljs-string">'gim'</span>), <span class="hljs-string">'&lt;span style="color:#ec1277;"&gt;'</span> + kw + <span class="hljs-string">'&lt;/span&gt;'</span>)
+                    })
+                    flag = <span class="hljs-literal">true</span>;
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key === <span class="hljs-string">'method'</span>) {
+                    lightColorCode[key].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mt</span>) </span>{
+                        htmlStr = htmlStr.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(mt, <span class="hljs-string">'gim'</span>), <span class="hljs-string">'&lt;span style="color:#52eeff;"&gt;'</span> + mt + <span class="hljs-string">'&lt;/span&gt;'</span>)
+                    })
+                    flag = <span class="hljs-literal">true</span>;
+                }
+            }
+            <span class="hljs-keyword">if</span> (flag) {
+                <span class="hljs-keyword">if</span> (!!matchStrSpace) {
+                    spaceLen = matchStrSpace.length;
+                } <span class="hljs-keyword">else</span> {
+                    spaceLen = <span class="hljs-number">0</span>;
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;i &lt; spaceLen;i++){
+                    <span class="hljs-keyword">var</span> curFont;
+                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.innerWidth &lt;= <span class="hljs-number">1200</span>){
+                        curFont = <span class="hljs-string">'12px'</span>;
+                    }<span class="hljs-keyword">else</span>{
+                        curFont = <span class="hljs-string">'14px'</span>;
+                    }
+                    htmlStr = htmlStr.replace(matchStrSpace[i],<span class="hljs-string">'&lt;span style="color:#899;font-size:'</span>+curFont+<span class="hljs-string">';"&gt;'</span> + matchStrSpace[i] + <span class="hljs-string">'&lt;/span&gt;'</span>);
+                }
+                el.innerHTML = htmlStr;
+            }
+        }
+        <span class="hljs-keyword">var</span> codes = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.ew-code'</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, len = codes.length; i &lt; len; i++) {
+            setHighLight(codes[i])
+        }
+
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>你可以狠狠点击此处<a href="https://jsbin.com/totolugofe/edit?html,console,output" rel="nofollow noreferrer" target="_blank">具体示例</a>查看效果。</p>
+<p>不过这里为了方便，我还是使用插件<code>Prism.js</code>,另外在这里，我们还要用到将一个普通文本打造成<code>HTML</code>网页的插件<code>marked.js</code>。</p>
+<p>接下来分析如何暂停动画和继续动画，很简单，就是清除定时器，然后重新调用即可。如何让编辑的代码生效呢，这就需要用到自定义事件<code>.sync</code>事件修饰符，自行查看官网<code>vue.js</code>。</p>
+<p>虽然这里用原生<code>js</code>也可以实现，但我们用<code>vue-cli</code>结合组件的方式来实现，这样更简单一些。好了，让我们开始吧:</p>
+<p>新建一个<code>vue-cli</code>工程(步骤自行百度):</p>
+<p>新建一个<code>styleEditor.vue</code>组件,代码如下:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;template&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;code&quot; v-html=&quot;codeInstyleTag&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;styleEditor&quot; ref=&quot;container&quot; contenteditable=&quot;true&quot; @blur=&quot;updateCode($event)&quot; v-html=&quot;highlightedCode&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    import Prism from &#39;prismjs&#39;
+    export default {
+        name:&#39;Editor&#39;,
+        props:[&#39;code&#39;],
+        computed:{
+            highlightedCode:function(){
+                //代码高亮
+                return Prism.highlight(this.code,Prism.languages.css);
+            },
+            // 让代码生效
+            codeInstyleTag:function(){
+                return `&lt;style&gt;${this.code}&lt;/style&gt;`
+            }
+        },
+        methods:{
+            //每次打字到最底部，就要滚动
+            goBottom(){
+                this.$refs.container.scrollTop = 10000;
+            },
+            //代码修改之后，可以重新生效
+            updateCode(e){
+                this.$emit(&#39;update:code&#39;,e.target.textContent);
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    .code{
+        display:none;
+    }
+&lt;/style&gt;
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"code"</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"codeInstyleTag"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"styleEditor"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"container"</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">"true"</span> @<span class="hljs-attr">blur</span>=<span class="hljs-string">"updateCode($event)"</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"highlightedCode"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> Prism <span class="hljs-keyword">from</span> <span class="hljs-string">'prismjs'</span>
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+        <span class="hljs-attr">name</span>:<span class="hljs-string">'Editor'</span>,
+        <span class="hljs-attr">props</span>:[<span class="hljs-string">'code'</span>],
+        <span class="hljs-attr">computed</span>:{
+            <span class="hljs-attr">highlightedCode</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                <span class="hljs-comment">//代码高亮</span>
+                <span class="hljs-keyword">return</span> Prism.highlight(<span class="hljs-keyword">this</span>.code,Prism.languages.css);
+            },
+            <span class="hljs-comment">// 让代码生效</span>
+            codeInstyleTag:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;style&gt;<span class="hljs-subst">${<span class="hljs-keyword">this</span>.code}</span>&lt;/style&gt;`</span>
+            }
+        },
+        <span class="hljs-attr">methods</span>:{
+            <span class="hljs-comment">//每次打字到最底部，就要滚动</span>
+            goBottom(){
+                <span class="hljs-keyword">this</span>.$refs.container.scrollTop = <span class="hljs-number">10000</span>;
+            },
+            <span class="hljs-comment">//代码修改之后，可以重新生效</span>
+            updateCode(e){
+                <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'update:code'</span>,e.target.textContent);
+            }
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.code</span>{
+        <span class="hljs-attribute">display</span>:none;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>新建一个<code>resumeEditor.vue</code>组件,代码如下:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;template&gt;
+    &lt;div class = &quot;resumeEditor&quot; :class=&quot;{htmlMode:enableHtml}&quot; ref = &quot;container&quot;&gt;
+        &lt;div v-if=&quot;enableHtml&quot; v-html=&quot;result&quot;&gt;&lt;/div&gt;
+        &lt;pre v-else&gt;{{result}}&lt;/pre&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    import marked from &#39;marked&#39;
+    export default {
+        props:[&#39;markdown&#39;,&#39;enableHtml&#39;],
+        name:&#39;ResumeEditor&#39;,
+        computed:{
+            result:function(){
+                return this.enableHtml ? marked(this.markdown) : this.markdown
+            }
+        },
+        methods:{
+            goBottom:function(){
+                this.$refs.container.scrollTop = 10000
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    .htmlMode{
+        anmation:flip 3s;
+    }
+    @keyframes flip{
+        0%{
+            opactiy:0;
+        }
+        100%{
+            opactiy:1;
+        }
+    }
+&lt;/style&gt; 
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span> = <span class="hljs-string">"resumeEditor"</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">"{htmlMode:enableHtml}"</span> <span class="hljs-attr">ref</span> = <span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"enableHtml"</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"result"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">v-else</span>&gt;</span>{{result}}<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> marked <span class="hljs-keyword">from</span> <span class="hljs-string">'marked'</span>
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+        <span class="hljs-attr">props</span>:[<span class="hljs-string">'markdown'</span>,<span class="hljs-string">'enableHtml'</span>],
+        <span class="hljs-attr">name</span>:<span class="hljs-string">'ResumeEditor'</span>,
+        <span class="hljs-attr">computed</span>:{
+            <span class="hljs-attr">result</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.enableHtml ? marked(<span class="hljs-keyword">this</span>.markdown) : <span class="hljs-keyword">this</span>.markdown
+            }
+        },
+        <span class="hljs-attr">methods</span>:{
+            <span class="hljs-attr">goBottom</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                <span class="hljs-keyword">this</span>.$refs.container.scrollTop = <span class="hljs-number">10000</span>
+            }
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.htmlMode</span>{
+        <span class="hljs-attribute">anmation</span>:flip <span class="hljs-number">3s</span>;
+    }
+    @<span class="hljs-keyword">keyframes</span> flip{
+        0%{
+            <span class="hljs-attribute">opactiy</span>:<span class="hljs-number">0</span>;
+        }
+        100%{
+            <span class="hljs-attribute">opactiy</span>:<span class="hljs-number">1</span>;
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span> 
+</code></pre>
+<p>新建一个底部导航菜单组件<code>bottomNav.vue</code>,代码如下:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;template&gt;
+    &lt;div id=&quot;bottom&quot;&gt;
+        &lt;a  id=&quot;pause&quot; @click=&quot;pauseFun&quot;&gt;{{ !paused ? &#39;暂停动画&#39; : &#39;继续动画 ||&#39; }}&lt;/a&gt;
+        &lt;a  id=&quot;skipAnimation&quot; @click=&quot;skipAnimationFun&quot;&gt;跳过动画&lt;/a&gt;
+        &lt;p&gt;
+            &lt;span v-for=&quot;(url,index) in demourl&quot; :key=&quot;index&quot;&gt;
+                &lt;a :href=&quot;url.url&quot;&gt;{{ url.title }}&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/p&gt;
+        &lt;div id=&quot;music&quot; @click=&quot;musicPause&quot; :class=&quot;playing ? &#39;rotate&#39; : &#39;&#39;&quot; ref=&quot;music&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default{
+        name:&#39;bottom&#39;,
+        data(){
+            return{
+                demourl:[
+                    {url:&#39;http://eveningwater.com/&#39;,title:&#39;个人网站&#39;},
+                    {url:&#39;https://github.com/eveningwater&#39;,title:&#39;github&#39;}
+                ],
+                paused:false,//暂停
+                playing:false,//播放图标动画
+                autoPlaying:false,//播放音频
+                audio:&#39;&#39;
+            }
+        },
+        mounted(){
+            
+        },
+        methods:{
+            // 播放音乐
+            playMusic(){
+                this.playing = true;
+                this.autoPlaying = true;
+                // 创建audio标签
+                this.audio = new Audio();
+                this.audio.loop = &#39;loop&#39;;
+                this.audio.autoplay = &#39;autoplay&#39;;
+                this.audio.src = &quot;http://eveningwater.com/project/newReact-music-player/audio/%E9%BB%84%E5%9B%BD%E4%BF%8A%20-%20%E7%9C%9F%E7%88%B1%E4%BD%A0%E7%9A%84%E4%BA%91.mp3&quot;;
+                this.$refs.music.appendChild(this.audio);
+            },
+            // 跳过动画
+            skipAnimationFun(e){
+                e.preventDefault();
+                this.$emit(&#39;on-skip&#39;);
+            },
+            // 暂停动画
+            pauseFun(e){
+                e.preventDefault();
+                this.paused = !this.paused;
+                this.$emit(&#39;on-pause&#39;,this.paused);
+            },
+            // 暂停音乐
+            musicPause(){
+                this.playing = !this.playing;
+                if(!this.playing){
+                    this.audio.pause();
+                }else{
+                    this.audio.play();
+                }
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    #bottom{
+        position:fixed;
+        bottom:5px;
+        left:0;
+        right:0;
+    }
+    #bottom p{
+        float:right;
+    }
+    #bottom a{
+        text-decoration: none;
+        color: #999;
+        cursor:pointer;
+        margin-left:5px;
+    }
+    #bottom a:hover,#bottom a:active{
+        color: #010a11;
+    }
+&lt;/style&gt;
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">id</span>=<span class="hljs-string">"pause"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"pauseFun"</span>&gt;</span>{{ !paused ? '暂停动画' : '继续动画 ||' }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">id</span>=<span class="hljs-string">"skipAnimation"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"skipAnimationFun"</span>&gt;</span>跳过动画<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(url,index) in demourl"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"index"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">:href</span>=<span class="hljs-string">"url.url"</span>&gt;</span>{{ url.title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"music"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"musicPause"</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">"playing ? 'rotate' : ''"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"music"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>{
+        <span class="hljs-attr">name</span>:<span class="hljs-string">'bottom'</span>,
+        data(){
+            <span class="hljs-keyword">return</span>{
+                <span class="hljs-attr">demourl</span>:[
+                    {<span class="hljs-attr">url</span>:<span class="hljs-string">'http://eveningwater.com/'</span>,<span class="hljs-attr">title</span>:<span class="hljs-string">'个人网站'</span>},
+                    {<span class="hljs-attr">url</span>:<span class="hljs-string">'https://github.com/eveningwater'</span>,<span class="hljs-attr">title</span>:<span class="hljs-string">'github'</span>}
+                ],
+                <span class="hljs-attr">paused</span>:<span class="hljs-literal">false</span>,<span class="hljs-comment">//暂停</span>
+                playing:<span class="hljs-literal">false</span>,<span class="hljs-comment">//播放图标动画</span>
+                autoPlaying:<span class="hljs-literal">false</span>,<span class="hljs-comment">//播放音频</span>
+                audio:<span class="hljs-string">''</span>
+            }
+        },
+        mounted(){
+            
+        },
+        <span class="hljs-attr">methods</span>:{
+            <span class="hljs-comment">// 播放音乐</span>
+            playMusic(){
+                <span class="hljs-keyword">this</span>.playing = <span class="hljs-literal">true</span>;
+                <span class="hljs-keyword">this</span>.autoPlaying = <span class="hljs-literal">true</span>;
+                <span class="hljs-comment">// 创建audio标签</span>
+                <span class="hljs-keyword">this</span>.audio = <span class="hljs-keyword">new</span> Audio();
+                <span class="hljs-keyword">this</span>.audio.loop = <span class="hljs-string">'loop'</span>;
+                <span class="hljs-keyword">this</span>.audio.autoplay = <span class="hljs-string">'autoplay'</span>;
+                <span class="hljs-keyword">this</span>.audio.src = <span class="hljs-string">"http://eveningwater.com/project/newReact-music-player/audio/%E9%BB%84%E5%9B%BD%E4%BF%8A%20-%20%E7%9C%9F%E7%88%B1%E4%BD%A0%E7%9A%84%E4%BA%91.mp3"</span>;
+                <span class="hljs-keyword">this</span>.$refs.music.appendChild(<span class="hljs-keyword">this</span>.audio);
+            },
+            <span class="hljs-comment">// 跳过动画</span>
+            skipAnimationFun(e){
+                e.preventDefault();
+                <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'on-skip'</span>);
+            },
+            <span class="hljs-comment">// 暂停动画</span>
+            pauseFun(e){
+                e.preventDefault();
+                <span class="hljs-keyword">this</span>.paused = !<span class="hljs-keyword">this</span>.paused;
+                <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'on-pause'</span>,<span class="hljs-keyword">this</span>.paused);
+            },
+            <span class="hljs-comment">// 暂停音乐</span>
+            musicPause(){
+                <span class="hljs-keyword">this</span>.playing = !<span class="hljs-keyword">this</span>.playing;
+                <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.playing){
+                    <span class="hljs-keyword">this</span>.audio.pause();
+                }<span class="hljs-keyword">else</span>{
+                    <span class="hljs-keyword">this</span>.audio.play();
+                }
+            }
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+    <span class="hljs-selector-id">#bottom</span>{
+        <span class="hljs-attribute">position</span>:fixed;
+        <span class="hljs-attribute">bottom</span>:<span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+        <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;
+    }
+    <span class="hljs-selector-id">#bottom</span> <span class="hljs-selector-tag">p</span>{
+        <span class="hljs-attribute">float</span>:right;
+    }
+    <span class="hljs-selector-id">#bottom</span> <span class="hljs-selector-tag">a</span>{
+        <span class="hljs-attribute">text-decoration</span>: none;
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#999</span>;
+        <span class="hljs-attribute">cursor</span>:pointer;
+        <span class="hljs-attribute">margin-left</span>:<span class="hljs-number">5px</span>;
+    }
+    <span class="hljs-selector-id">#bottom</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,<span class="hljs-selector-id">#bottom</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span>{
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#010a11</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>接下来是核心<code>APP.vue</code>组件代码:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="&lt;template&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div class=&quot;main&quot;&gt;
+            &lt;StyleEditor ref=&quot;styleEditor&quot; v-bind.sync=&quot;currentStyle&quot;&gt;&lt;/StyleEditor&gt;
+            &lt;ResumeEditor ref=&quot;resumeEditor&quot; :markdown = &quot;currentMarkdown&quot; :enableHtml=&quot;enableHtml&quot;&gt;&lt;/ResumeEditor&gt;
+        &lt;/div&gt;
+        &lt;BottomNav ref =&quot;bottomNav&quot; @on-pause=&quot;pauseAnimation&quot; @on-skip=&quot;skipAnimation&quot;&gt;&lt;/BottomNav&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    import ResumeEditor from &#39;./components/resumeEditor&#39;
+    import StyleEditor from &#39;./components/styleEditor&#39;
+    import BottomNav from &#39;./components/bottomNav&#39;
+    import &#39;./assets/common.css&#39;
+    import fullStyle from &#39;./style.js&#39;
+    import my from &#39;./my.js&#39;
+    export default {
+        name: &#39;app&#39;,
+        components: {
+            ResumeEditor,
+            StyleEditor,
+            BottomNav
+        },
+        data() {
+            return {
+                interval: 40,//写入字的速度
+                currentStyle: {
+                    code: &#39;&#39;
+                },
+                enableHtml: false,//是否打造成HTML网页
+                fullStyle: fullStyle,
+                currentMarkdown: &#39;&#39;,
+                fullMarkdown: my,
+                timer: null
+            }
+        },
+        created() {
+            this.makeResume();
+        },
+        methods: {
+            // 暂停动画
+            pauseAnimation(bool) {
+                if(bool &amp;&amp; this.timer){
+                    clearTimeout(this.timer);
+                }else{
+                    this.makeResume();
+                }
+            },
+            // 快速跳过动画
+            skipAnimation(){
+                if(this.timer){
+                    clearTimeout(this.timer);
+                }
+                let str = &#39;&#39;;
+                this.fullStyle.map((f) =&gt; {
+                    str += f;
+                })
+                setTimeout(() =&gt; {
+                    this.$set(this.currentStyle,&#39;code&#39;,str);
+                },100)
+                this.currentMarkdown = my;
+                this.enableHtml = true;
+                this.$refs.bottomNav.playMusic();
+            },
+            // 加载动画
+            makeResume: async function() {
+                await this.writeShowStyle(0)
+                await this.writeShowResume()
+                await this.writeShowStyle(1)
+                await this.writeShowHtml()
+                await this.writeShowStyle(2)
+                await this.$nextTick(() =&gt; {this.$refs.bottomNav.playMusic()});
+            },
+            // 打造成HTML网页
+            writeShowHtml: function() {
+                return new Promise((resolve, reject) =&gt; {
+                    this.enableHtml = true;
+                    resolve();
+                })
+            },
+            // 写入css代码
+            writeShowStyle(n) {
+                return new Promise((resolve, reject) =&gt; {
+                    let showStyle = (async function() {
+                        let style = this.fullStyle[n];
+                        if (!style) return;
+                        //计算出数组每一项的长度
+                        let length = this.fullStyle.filter((f, i) =&gt; i &lt;= n).map((it) =&gt; it.length).reduce((t, c) =&gt; t + c, 0);
+                        //当前要写入的长度等于数组每一项的长度减去当前正在写的字符串的长度
+                        let prefixLength = length - style.length;
+                        if (this.currentStyle.code.length &lt; length) {
+                            let l = this.currentStyle.code.length - prefixLength;
+                            let char = style.substring(l, l + 1) || &#39; &#39;;
+                            this.currentStyle.code += char;
+                            if (style.substring(l - 1, l) === &#39;\n&#39; &amp;&amp; this.$refs.styleEditor) {
+                                this.$nextTick(() =&gt; {
+                                    this.$refs.styleEditor.goBottom();
+                                })
+                            }
+                            this.timer = setTimeout(showStyle, this.interval);
+                        } else {
+                            resolve();
+                        }
+                    }).bind(this)
+                    showStyle();
+                })
+            },
+            // 写入简历
+            writeShowResume() {
+                return new Promise((resolve, reject) =&gt; {
+                    let length = this.fullMarkdown.length;
+                    let showResume = () =&gt; {
+                        if (this.currentMarkdown.length &lt; length) {
+                            this.currentMarkdown = this.fullMarkdown.substring(0, this.currentMarkdown.length + 1);
+                            let lastChar = this.currentMarkdown[this.currentMarkdown.length - 1];
+                            let prevChar = this.currentMarkdown[this.currentMarkdown.length - 2];
+                            if (prevChar === &#39;\n&#39; &amp;&amp; this.$refs.resumeEditor) {
+                                this.$nextTick(() =&gt; {
+                                    this.$refs.resumeEditor.goBottom()
+                                });
+                            }
+                            this.timer = setTimeout(showResume, this.interval);
+                        } else {
+                            resolve()
+                        }
+                    }
+                    showResume();
+                })
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    #app {
+        font-family: &#39;Avenir&#39;, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .main {
+        position: relative;
+    }
+
+    html {
+        min-height: 100vh;
+    }
+
+    * {
+        transition: all 1.3s;
+    }
+&lt;/style&gt;
+
+" title="" data-original-title="复制"></span>
+      </div>
+      </div><pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">StyleEditor</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"styleEditor"</span> <span class="hljs-attr">v-bind.sync</span>=<span class="hljs-string">"currentStyle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">StyleEditor</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ResumeEditor</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"resumeEditor"</span> <span class="hljs-attr">:markdown</span> = <span class="hljs-string">"currentMarkdown"</span> <span class="hljs-attr">:enableHtml</span>=<span class="hljs-string">"enableHtml"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ResumeEditor</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">BottomNav</span> <span class="hljs-attr">ref</span> =<span class="hljs-string">"bottomNav"</span> @<span class="hljs-attr">on-pause</span>=<span class="hljs-string">"pauseAnimation"</span> @<span class="hljs-attr">on-skip</span>=<span class="hljs-string">"skipAnimation"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">BottomNav</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> ResumeEditor <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/resumeEditor'</span>
+    <span class="hljs-keyword">import</span> StyleEditor <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/styleEditor'</span>
+    <span class="hljs-keyword">import</span> BottomNav <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/bottomNav'</span>
+    <span class="hljs-keyword">import</span> <span class="hljs-string">'./assets/common.css'</span>
+    <span class="hljs-keyword">import</span> fullStyle <span class="hljs-keyword">from</span> <span class="hljs-string">'./style.js'</span>
+    <span class="hljs-keyword">import</span> my <span class="hljs-keyword">from</span> <span class="hljs-string">'./my.js'</span>
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'app'</span>,
+        <span class="hljs-attr">components</span>: {
+            ResumeEditor,
+            StyleEditor,
+            BottomNav
+        },
+        data() {
+            <span class="hljs-keyword">return</span> {
+                <span class="hljs-attr">interval</span>: <span class="hljs-number">40</span>,<span class="hljs-comment">//写入字的速度</span>
+                currentStyle: {
+                    <span class="hljs-attr">code</span>: <span class="hljs-string">''</span>
+                },
+                <span class="hljs-attr">enableHtml</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否打造成HTML网页</span>
+                fullStyle: fullStyle,
+                <span class="hljs-attr">currentMarkdown</span>: <span class="hljs-string">''</span>,
+                <span class="hljs-attr">fullMarkdown</span>: my,
+                <span class="hljs-attr">timer</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        created() {
+            <span class="hljs-keyword">this</span>.makeResume();
+        },
+        <span class="hljs-attr">methods</span>: {
+            <span class="hljs-comment">// 暂停动画</span>
+            pauseAnimation(bool) {
+                <span class="hljs-keyword">if</span>(bool &amp;&amp; <span class="hljs-keyword">this</span>.timer){
+                    clearTimeout(<span class="hljs-keyword">this</span>.timer);
+                }<span class="hljs-keyword">else</span>{
+                    <span class="hljs-keyword">this</span>.makeResume();
+                }
+            },
+            <span class="hljs-comment">// 快速跳过动画</span>
+            skipAnimation(){
+                <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.timer){
+                    clearTimeout(<span class="hljs-keyword">this</span>.timer);
+                }
+                <span class="hljs-keyword">let</span> str = <span class="hljs-string">''</span>;
+                <span class="hljs-keyword">this</span>.fullStyle.map(<span class="hljs-function">(<span class="hljs-params">f</span>) =&gt;</span> {
+                    str += f;
+                })
+                setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    <span class="hljs-keyword">this</span>.$set(<span class="hljs-keyword">this</span>.currentStyle,<span class="hljs-string">'code'</span>,str);
+                },<span class="hljs-number">100</span>)
+                <span class="hljs-keyword">this</span>.currentMarkdown = my;
+                <span class="hljs-keyword">this</span>.enableHtml = <span class="hljs-literal">true</span>;
+                <span class="hljs-keyword">this</span>.$refs.bottomNav.playMusic();
+            },
+            <span class="hljs-comment">// 加载动画</span>
+            makeResume: <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.writeShowStyle(<span class="hljs-number">0</span>)
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.writeShowResume()
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.writeShowStyle(<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.writeShowHtml()
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.writeShowStyle(<span class="hljs-number">2</span>)
+                <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<span class="hljs-keyword">this</span>.$refs.bottomNav.playMusic()});
+            },
+            <span class="hljs-comment">// 打造成HTML网页</span>
+            writeShowHtml: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+                    <span class="hljs-keyword">this</span>.enableHtml = <span class="hljs-literal">true</span>;
+                    resolve();
+                })
+            },
+            <span class="hljs-comment">// 写入css代码</span>
+            writeShowStyle(n) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+                    <span class="hljs-keyword">let</span> showStyle = (<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                        <span class="hljs-keyword">let</span> style = <span class="hljs-keyword">this</span>.fullStyle[n];
+                        <span class="hljs-keyword">if</span> (!style) <span class="hljs-keyword">return</span>;
+                        <span class="hljs-comment">//计算出数组每一项的长度</span>
+                        <span class="hljs-keyword">let</span> length = <span class="hljs-keyword">this</span>.fullStyle.filter(<span class="hljs-function">(<span class="hljs-params">f, i</span>) =&gt;</span> i &lt;= n).map(<span class="hljs-function">(<span class="hljs-params">it</span>) =&gt;</span> it.length).reduce(<span class="hljs-function">(<span class="hljs-params">t, c</span>) =&gt;</span> t + c, <span class="hljs-number">0</span>);
+                        <span class="hljs-comment">//当前要写入的长度等于数组每一项的长度减去当前正在写的字符串的长度</span>
+                        <span class="hljs-keyword">let</span> prefixLength = length - style.length;
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.currentStyle.code.length &lt; length) {
+                            <span class="hljs-keyword">let</span> l = <span class="hljs-keyword">this</span>.currentStyle.code.length - prefixLength;
+                            <span class="hljs-keyword">let</span> char = style.substring(l, l + <span class="hljs-number">1</span>) || <span class="hljs-string">' '</span>;
+                            <span class="hljs-keyword">this</span>.currentStyle.code += char;
+                            <span class="hljs-keyword">if</span> (style.substring(l - <span class="hljs-number">1</span>, l) === <span class="hljs-string">'\n'</span> &amp;&amp; <span class="hljs-keyword">this</span>.$refs.styleEditor) {
+                                <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                                    <span class="hljs-keyword">this</span>.$refs.styleEditor.goBottom();
+                                })
+                            }
+                            <span class="hljs-keyword">this</span>.timer = setTimeout(showStyle, <span class="hljs-keyword">this</span>.interval);
+                        } <span class="hljs-keyword">else</span> {
+                            resolve();
+                        }
+                    }).bind(<span class="hljs-keyword">this</span>)
+                    showStyle();
+                })
+            },
+            <span class="hljs-comment">// 写入简历</span>
+            writeShowResume() {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+                    <span class="hljs-keyword">let</span> length = <span class="hljs-keyword">this</span>.fullMarkdown.length;
+                    <span class="hljs-keyword">let</span> showResume = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.currentMarkdown.length &lt; length) {
+                            <span class="hljs-keyword">this</span>.currentMarkdown = <span class="hljs-keyword">this</span>.fullMarkdown.substring(<span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.currentMarkdown.length + <span class="hljs-number">1</span>);
+                            <span class="hljs-keyword">let</span> lastChar = <span class="hljs-keyword">this</span>.currentMarkdown[<span class="hljs-keyword">this</span>.currentMarkdown.length - <span class="hljs-number">1</span>];
+                            <span class="hljs-keyword">let</span> prevChar = <span class="hljs-keyword">this</span>.currentMarkdown[<span class="hljs-keyword">this</span>.currentMarkdown.length - <span class="hljs-number">2</span>];
+                            <span class="hljs-keyword">if</span> (prevChar === <span class="hljs-string">'\n'</span> &amp;&amp; <span class="hljs-keyword">this</span>.$refs.resumeEditor) {
+                                <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                                    <span class="hljs-keyword">this</span>.$refs.resumeEditor.goBottom()
+                                });
+                            }
+                            <span class="hljs-keyword">this</span>.timer = setTimeout(showResume, <span class="hljs-keyword">this</span>.interval);
+                        } <span class="hljs-keyword">else</span> {
+                            resolve()
+                        }
+                    }
+                    showResume();
+                })
+            }
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+    <span class="hljs-selector-id">#app</span> {
+        <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Avenir'</span>, Helvetica, Arial, sans-serif;
+        <span class="hljs-attribute">-webkit-font-smoothing</span>: antialiased;
+        <span class="hljs-attribute">-moz-osx-font-smoothing</span>: grayscale;
+    }
+
+    <span class="hljs-selector-class">.main</span> {
+        <span class="hljs-attribute">position</span>: relative;
+    }
+
+    <span class="hljs-selector-tag">html</span> {
+        <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+    }
+
+    * {
+        <span class="hljs-attribute">transition</span>: all <span class="hljs-number">1.3s</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+</code></pre>
+<p>到此为止，一个可以快速跳过动画，可以暂停动画，还有音乐播放，还能自由编辑代码的会动的简历已经完成，还添加了用户来控制写字速度快慢的功能。代码已上传至<a href="https://github.com/eveningwater/vue-resume" rel="nofollow noreferrer" target="_blank">git源码</a>,欢迎<code>fork</code>,也望不吝啬<code>star</code>。</p>
+<p><a href="https://www.eveningwater.com/vue-resume/new/" rel="nofollow noreferrer" target="_blank">在线预览</a>。 </p>
+<p>鄙人创建了一个QQ群，供大家学习交流，希望和大家合作愉快，互相帮助，交流学习，以下为群二维码：</p>
+<p><span class="img-wrap"><img referrerpolicy="no-referrer" data-src="/img/bVbslX3?w=256&amp;h=256" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/squares.svg" alt="clipboard.png" title="clipboard.png" style="cursor: pointer;"></span></p>
+
+                </div>
+                                                
+                <div class="clearfix mt10">
+                    <ul class="article-operation list-inline pull-left mt15"><li><a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img class="mb5" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/creativecommons-cc.svg" height="20"></a></li><li class="dropdown js__content-ops hidden-xs" data-module="article" data-id="1190000018779991" data-typetext="文章"><a href="javascript:void(0);" class="dropdown-toggle text-muted" data-toggle="dropdown"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a><ul class="dropdown-menu dropdown-menu-left"><li><a href="https://segmentfault.com/a/1190000018779991#911" data-toggle="modal" data-target="#911" data-action="report">举报</a></li></ul></li></ul>
+                    <div class="pull-right mt-10 hidden-xs">
+                        <div class="widget-share__full" data-text="vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能)" data-url="https://segmentfault.com/a/1190000018779991" data-shorturl="http://sfau.lt/b5bqXHf"><div class="widget-share-network sharer-0" style="display: block;"><ul class="sn-inline"><li data-network="weibo"><a href="javascript:void(0);" class="entypo-weibo icon-sn-weibo share-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至新浪微博">新浪微博</a></li><li data-network="wechart"><a href="javascript:void(0);" class="entypo-wechart icon-sn-weixin share-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至微信">微信</a></li><li data-network="twitter"><a href="javascript:void(0);" class="entypo-twitter icon-sn-twitter share-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Twitter">Twitter</a></li><li data-network="facebook"><a href="javascript:void(0);" class="entypo-facebook icon-sn-facebook share-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Facebook">Facebook</a></li></ul></div><a type="button" class="btn btn-sm shareMore btn-sn-more" data-toggle="popover" data-placement="top" data-url="https://segmentfault.com/a/1190000018779991" data-shorturl="http://sfau.lt/b5bqXHf"><span class="icon-sn-dotted" data-original-title="" title=""></span><strong class="visible-xs-inline">•••</strong></a></div>
+
+
+                    </div>
+                </div>
+                <div class="mt10 text-center mb30"><button type="button" id="mainLike" data-id="1190000018779991" class="btn btn-success btn-lg mr15 "><span id="mainLikeText">赞</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;
+                                <span id="mainLikeNum">11 </span></button><button type="button" id="mainBookmark" data-type="article" data-id="1190000018779991" class="btn btn-default btn-lg "><span id="mainBookmarkText">收藏</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;<span id="mainBookmarkNum">6</span></button><br><button type="button" data-id="1190000018779991" class="btn btn-danger btn-lg mt15 article__reward-btn">
+                                    赞赏支持
+                                </button></div><div class="mt30 mb30 text-center article__reward-info"><span class="mr10">如果觉得我的文章对你有用，请随意赞赏</span></div>                
+                <script type="text/javascript">
+                    OA_show(3);
+                </script>
+
+                <h4 class="pt20 mb15 mt0 border-top">你可能感兴趣的</h4>
+
+                                <div id="paradigm-article-related"><div class="recommend-post mb30"><ul class="widget-links"><li><a href="http://segmentfault.com/a/1190000016859166" title="一个Time TodoList实例了解redux在wepy中的使用" target="_blank">一个Time TodoList实例了解redux在wepy中的使用</a><span class="text-muted">秋雨</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/vue.js">vue.js</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/node.js">node.js</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/html5">html5</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li><li><a href="http://segmentfault.com/a/1190000016855286" title="JS 的私有成员为什么钦定了 #？" target="_blank">JS 的私有成员为什么钦定了 #？</a><span class="text-muted">tarol</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li><li><a href="http://segmentfault.com/a/1190000016855711" title="spring boot security jwt 整合vue-admin-template" target="_blank">spring boot security jwt 整合vue-admin-template</a><span class="text-muted">旋转的木驴</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/vue-router">vue-router</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/vue.js">vue.js</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/jwt">jwt</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/spring-security">spring-security</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/springboot">springboot</a></li><li><a href="http://segmentfault.com/a/1190000016856741" title="TypeScript 函数" target="_blank">TypeScript 函数</a><span class="text-muted">小小____</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/typescript">typescript</a></li><li><a href="http://segmentfault.com/a/1190000016855009" title="使用truffle开发以太坊Dapp" target="_blank">使用truffle开发以太坊Dapp</a><span class="text-muted">JouyPub</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E4%BB%A5%E5%A4%AA%E5%9D%8A">以太坊</a></li><li><a href="http://segmentfault.com/a/1190000016858692" title="Go基础学习记录之Session存储" target="_blank">Go基础学习记录之Session存储</a><span class="text-muted">DurbanZhang</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/session">session</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/golang">golang</a></li><li><a href="http://segmentfault.com/a/1190000016859020" title="用以太坊区块链保证Asp.Net Core的API安全（下）" target="_blank">用以太坊区块链保证Asp.Net Core的API安全（下）</a><span class="text-muted">malakashi</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/c%23">c#</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E7%A8%8B%E5%BA%8F%E5%91%98">程序员</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/asp.net">asp.net</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E4%BB%A5%E5%A4%AA%E5%9D%8A">以太坊</a></li><li><a href="http://segmentfault.com/a/1190000016857039" title="事件处理程序中event参数的传递" target="_blank">事件处理程序中event参数的传递</a><span class="text-muted">黑白路</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li></ul></div></div>
+
+                
+        <div class="comments--news comments--default comments--article 
+    " data-id="1190000018779991" data-user-id="" data-author-id="1030000014231837 " data-is-admin="null" id="goToReplyArea">
+                    <div class="mb10 clearfix">
+                <strong class="comments-stat pull-left mr10">评论</strong>
+
+                                                    <div class="btn-group btn-group-xs pull-right comments-sort btn-group-menu" role="menu">
+                        <a href="javascript:;" class="btn btn-default active" data-sort="default">默认排序</a>
+                        <a href="javascript:;" class="btn btn-default" data-sort="desc">时间排序</a>
+                    </div>
+                            </div>
+                <div class="comments-container">
+                                <div class="comments-list">
+            </div>
+    <div class="comments-loading hide">载入中...</div>
+        <div class="comments-more hide"><a href="javascript:;">显示更多评论</a></div>
+    
+
+                                    <div class="comments-box" id="goToReplyEditor">
+                <div class="pull-left">
+                    <img class="avatar-32 " src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/user-128.png" alt="">
+                </div>
+                <div class="comments-box-content">
+                    <form action="https://segmentfault.com/api/article/1190000018779991/comments/add">
+                        <div class="form-group mb0">
+                            <textarea name="text" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
+                            <div class="mt15 text-right">
+                                <button type="button" class="hide"></button>
+                                <button class=" btn btn-primary" type="button">发布评论</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                                                        </div>
+    </div>
+
+
+                                    
+                
+                
+
+            </div><!-- /.main -->
+
+
+            <div class="col-md-3 side hidden-sm hidden-xs mt30">
+                                                
+                <div class="mb25 hidden-md hidden-sm hidden-xs">
+    <img src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/20191121.png" alt="Planets" usemap="#gridsMap" width="255" height="136">
+    <map name="gridsMap" id="gridsMap"></map>
+    <div style="text-align: center;"><a style="text-align:center; color:#9E9E9E; font-size:12px" href="https://segmentfault.com/sponsor">广告位促销，月曝光三千万，10 元/天</a></div>
+            <script async="" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/20191121.js"></script>
+    </div>
+
+                                <style>
+                    .job-recommend-area a:not(:last-of-type) {margin-bottom:10px; display: block}
+                    .job-recommend-area a:hover {text-decoration: none;}
+                </style>
+                <div class="hidden-md">
+                    <div class="job-recommend">
+                      <h3 class="job-title">推广链接</h3>
+                      <div class="job-recommend-area">
+                        <script type="text/javascript">
+                            OA_show(7);
+                            OA_show(9);
+                            OA_show(10);
+                            OA_show(15);
+                            OA_show(16);
+                        </script>
+                      </div>
+                    </div>
+                    <style>
+                    .job-recommend {margin-bottom: 30px;}
+                    .job-title {
+                        font-size: 14px;
+                        color: #017E66;
+                        font-weight: 500;
+                        background: #BFE6D7;
+                        margin: 0;
+                        padding-top: 6px;
+                        padding-bottom: 6px;
+                        text-align: center;
+                    }
+                    .job-recommend-area {
+                      padding: 13px;
+                      border: 3px solid #EBF7F3;
+                      border-top: none;
+                    }
+                    </style>
+                </div>
+
+                                
+                <div class="hidden-md ad-should-be-fixed stuckMenu isStuck" style="position: fixed; top: 10px; display: block;">
+                    <div class="mb25 block">
+                        <script type="text/javascript">
+                            OA_show(1);
+                        </script>
+                    </div>
+                </div>
+                <div class="post-nav hidden-xs" style="margin-top: 0px;">
+                    <div class="panel panel-default widget-outline">
+                        <div class="panel-heading">目录</div>
+                        <div class="panel-body">
+                            <div class="nav-body" style="overflow:scroll">
+                                <div class="highlight-title"></div>
+                                <ul class="articleIndex"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div><!-- /.side -->
+        </div>
+    </div>
+</div>
+
+<div id="shareToWeiboModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">分享</h4>
+            </div>
+            <div class="modal-body">
+                <p class="sfModal-content">
+                    分享到微博？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default dont-likeweibo" data-dismiss="modal">取消</button>
+                <a href="https://segmentfault.com/a/1190000018779991" id="shareLink" class="btn btn-primary done-btn" target="_blank" onclick="$(&#39;#shareToWeiboModal&#39;).modal(&#39;hide&#39;)">分享</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal widget-911" id="911" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title"><span data-model="action"></span><span data-model="type"></span></h4>
+      </div>
+      <div class="modal-body">
+        <form id="reportForm">
+          <!-- 后台返回信息 -->
+          <p class="alert alert-warning" data-model="returnMsg"></p>
+          <div data-role="base">
+            <p>
+              <strong class="required">我要<span data-model="action"></span>该<span data-model="type"></span>，理由是：</strong>
+            </p>
+            <ul class="list-unstyled" data-model="list"></ul>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default pull-left" type="button" data-role="back" style="display:none">返回重选</button>
+                <button class="btn btn-default" data-dismiss="modal" type="button">取消</button>
+        <button class="btn btn-primary" data-role="submit" type="button">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal widget-seo" id="seo" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title"><span data-model="action"></span><span data-model="type"></span></h4>
+            </div>
+            <div class="modal-body">
+                <form id="seoForm">
+                    <!-- 后台返回信息 -->
+                    <p class="alert alert-warning" data-model="returnMsg" style="display: none;"></p>
+                    <div data-role="base">
+                        <div class="form-group">
+                            <label>SEO标题：</label><textarea style="min-height: 35px; width: 100%; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="title" class="form-control" rows="1" placeholder="请输入SEO标题"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>SEO描述：</label><textarea style="min-height: 35px; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="desc" class="form-control" rows="1" placeholder="请输入SEO描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>SEO keywords：</label><textarea style="min-height: 35px; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="keywords" class="form-control" rows="1" placeholder="请输入SEO keywords"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type="button">取消</button>
+                <button class="btn btn-primary" data-role="submit" type="button">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="loginBanner" class="hidden-sm hidden-xs loginBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7">
+                <h1 class="title">在 SegmentFault，学习技能、解决问题</h1>
+                <p class="desc">每个月，我们帮助 1000 万的开发者解决各种各样的技术问题。并助力他们在技术能力、职业生涯、影响力上获得提升。</p>
+            </div>
+            <div class="col-lg-3 col-lg-offset-3 col-md-4 col-md-offset-1">
+                <form class="register-form clearfix" action="https://segmentfault.com/api/user/phone/register">
+
+                    
+                    <a href="https://segmentfault.com/user/register" class="SFLogin btn btn-lg btn-primary mr15">免费注册</a>
+                    <a href="https://segmentfault.com/user/login" class="SFRegister btn btn-lg btn-primary">立即登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    OA_show(4);
+</script>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row hidden-xs">
+            <dl class="col-sm-2 site-link">
+                <dt>产品</dt>
+                                <dd><a href="https://segmentfault.com/questions/hottest?utm_source=sf-footer" target="_blank">热门问答</a></dd>
+                                <dd><a href="https://segmentfault.com/blogs/hottest?utm_source=sf-footer" target="_blank">热门专栏</a></dd>
+                                <dd><a href="https://segmentfault.com/lives?utm_source=sf-footer" target="_blank">热门课程</a></dd>
+                                <dd><a href="https://segmentfault.com/events?utm_source=sf-footer" target="_blank">最新活动</a></dd>
+                                <dd><a href="https://segmentfault.com/groups?utm_source=sf-footer" target="_blank">技术圈</a></dd>
+                                <dd><a href="https://segmentfault.com/groups?tab=jobs&amp;utm_source=sf-footer" target="_blank">酷工作</a></dd>
+                                <dd><a href="https://segmentfault.com/app?utm_source=sf-footer" target="_blank">移动客户端</a></dd>
+                            </dl>
+            
+            <dl class="col-sm-2 site-link">
+                <dt>课程</dt>
+                                <dd><a href="https://segmentfault.com/lives/edu?tag=java&amp;sort=hottest&amp;utm_source=sf-footer" target="_blank">Java 开发课程</a></dd>
+                                <dd><a href="https://segmentfault.com/lives/edu?tag=php&amp;sort=hottest&amp;utm_source=sf-footer" target="_blank">PHP 开发课程</a></dd>
+                                <dd><a href="https://segmentfault.com/lives/edu?tag=python&amp;sort=hottest&amp;utm_source=sf-footer" target="_blank">Python 开发课程</a></dd>
+                                <dd><a href="https://segmentfault.com/lives/edu?category=1&amp;sort=hottest&amp;utm_source=sf-footer" target="_blank">前端开发课程</a></dd>
+                                <dd><a href="https://segmentfault.com/lives/study?category=3&amp;sort=hottest&amp;utm_source=sf-footer" target="_blank">移动开发课程</a></dd>
+                            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>资源</dt>
+                                <dd><a href="https://segmentfault.com/weekly?utm_source=sf-footer" target="_blank">每周精选</a></dd>
+                                <dd><a href="https://segmentfault.com/users?utm_source=sf-footer" target="_blank">用户排行榜</a></dd>
+                                <dd><a href="https://segmentfault.com/badges?utm_source=sf-footer" target="_blank">徽章</a></dd>
+                                <dd><a href="https://segmentfault.com/faq?utm_source=sf-footer" target="_blank">帮助中心</a></dd>
+                                <dd><a href="https://segmentfault.com/repu?utm_source=sf-footer" target="_blank">声望与权限</a></dd>
+                                <dd><a href="https://segmentfault.com/community?utm_source=sf-footer" target="_blank">社区服务中心</a></dd>
+                            </dl>
+            
+            <dl class="col-sm-2 site-link">
+                <dt>合作</dt>
+                                <dd><a href="https://about.segmentfault.com/?utm_source=sf-footer" target="_blank">关于我们</a></dd>
+                                <dd><a href="https://business.segmentfault.com/ads?utm_source=sf-footer" target="_blank">广告投放</a></dd>
+                                <dd><a href="https://segmentfault.com/groups?tab=jobs&amp;utm_source=sf-footer" target="_blank">职位发布</a></dd>
+                                <dd><a href="https://segmentfault.com/lives/apply?utm_source=sf-footer" target="_blank">讲师招募</a></dd>
+                                <dd><a href="https://about.segmentfault.com/contact.html?utm_source=sf-footer" target="_blank">联系我们</a></dd>
+                                <dd><a href="https://segmentfault.com/link?utm_source=sf-footer" target="_blank">合作伙伴</a></dd>
+                            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>关注</dt>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault?utm_source=sf-footer" target="_blank">产品技术日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/community_admin?utm_source=sf-footer" target="_blank">社区运营日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_news?utm_source=sf-footer" target="_blank">市场运营日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_team?utm_source=sf-footer" target="_blank">团队日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/interview?utm_source=sf-footer" target="_blank">社区访谈</a></dd>
+                                <dd>
+                    <ul class="sn-inline">
+                        <li>
+                            <a class="entypo-wechart icon-sn-weixin weixin-popover-qrcode" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">微信</a>
+                        </li>
+                        <li>
+                            <a href="http://weibo.com/segmentfault" target="_blank" class="entypo-weibo icon-sn-weibo">新浪微博</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/SegmentFault" target="_blank" class="entypo-facebook icon-sn-github">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/segment_fault" target="_blank" class="entypo-twitter icon-sn-twitter">Twitter</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+
+            <dl class="col-sm-2 site-link" id="license">
+                <dt>条款</dt>
+                                <dd><a href="https://segmentfault.com/tos?utm_source=sf-footer" target="_blank">服务条款</a></dd>
+                                <dd><a href="https://segmentfault.com/privacy?utm_source=sf-footer" target="_blank">隐私政策</a></dd>
+                                <dd>
+                    <a href="https://segmentfault.com/app" class="clearfix mt10 block"><img src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/appQrcode.png" class="app-qrcode"></a>
+                    <div class="app-download-desc">
+                        <p>扫一扫下载 App</p>
+                    </div>
+                    
+                </dd>
+            </dl>
+        </div>
+        <div class="copyright">
+            Copyright © 2011-2019 SegmentFault. 当前呈现版本 19.02.27<br>
+            <a href="http://beian.miit.gov.cn/" rel="nofollow">浙ICP备 15005796号-2</a> &nbsp;
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002000" rel="nofollow">浙公网安备 33010602002000号</a>
+            <span class="ml5">杭州堆栈科技有限公司版权所有</span>
+            <p class="mt30">CDN 存储服务由 <a target="_blank" href="https://www.upyun.com/?utm_source=segmentfault&amp;utm_medium=link&amp;utm_campaign=upyun&amp;md=segmentfault">又拍云</a> 赞助提供 </p>
+        </div>
+        <p class="text-center">
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="mobile" href="javascript:;">移动版</a>
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="desktop" href="javascript:;">桌面版</a>
+        </p>
+    </div>
+</footer>
+
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="border-bottom" href="https://segmentfault.com/a/1190000018779991#">回顶部</a>
+</div>
+
+    <script id="loginModal" type="text/template">
+    <div class="row bg-white login-modal">
+        <div class="col-md-12 login-wrap">
+            <form action="/api/user/login" method="POST" role="form" class="mt15">
+                <div class="form-group hidden">
+                                        <input type="text" class="form-control" name="remember" value="1"
+                           autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">手机号 或 Email</label>
+                    <input type="text" class="form-control" name="username" tabindex="1" required placeholder="11 位手机号 或 Email"
+                           autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">密码</label><span class="pull-right"><a
+                                href="/user/forgot" tabindex="4">忘记密码</a></span>
+                    <input type="password" class="form-control" name="password" tabindex="2" required placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <a
+                            
+                                                    href="/user/phoneLogin"
+                            class="phoneLogin"
+                                            >手机验证码登录</a>
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pull-right pl20 pr20" tabindex="3"
+                            onclick='ga("send", "event", "email login button", "clicked", "login modal");'>登录
+                    </button>
+                </div>
+            </form>
+            <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFLogin
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    注册新账号
+            </a>
+</div>
+<p class="text-muted text-center mb15">继续即表示你同意<a href="/tos" target="_blank">《服务条款》</a>和<a href="/privacy" target="_blank">《隐私政策》</a></p>        </div>
+    </div>
+</script>
+    <script id="registerModal" type="text/template">
+    <div class="row bg-white login-modal">
+        <div class="col-md-12 login-wrap">
+            
+            <form action="/api/user/register" method="POST" role="form" class="mt15">
+                <div class="form-group">
+                    <label for="name" class="control-label">你的名字</label>
+                    <input type="text" class="form-control" name="name" required placeholder="真实姓名或常用昵称">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mail" class="control-label">手机号</label>
+                    <input type="text" class="form-control" id="login-name" name="mail" required placeholder="11 位手机号">
+                </div>
+                
+                <input type="text" class="hidden" name="register_type" value="mail">
+
+                <div class="form-group">
+                    <div class="captchaInput mb10">
+                        <input type="text" class="form-control" name="cap" placeholder="右侧的验证码" style="width:50%; display: inline; margin-right: 15px;">
+                        <span class="mt10">
+                                <a id="loginReloadCaptcha" href="javascript:void(0)">
+                                <img src="/user/captcha?w=135&h=34" class="cap" width="135" height="34"/></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="phone-register-only hidden">
+                        <div class="input-group">
+                            <input name="code" type="text" class="form-control js-user-login__phone-code-value" placeholder="短信验证码">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default js-user-login__phone-vaild-btn" style="width:96px;" type="button">
+                                获取验证码</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="control-label">密码</label>
+                    <input type="password" class="form-control" name="password" required placeholder="不少于 6 位的密码">
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pl20 pr20 pull-right"
+                            onclick='ga("send", "event", "email register button", "clicked", "login modal");'>注册
+                    </button>
+                </div>
+                                <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFRegister
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    已有账号登录
+            </a>
+</div>
+<p class="text-muted text-center mb15">继续即表示你同意<a href="/tos" target="_blank">《服务条款》</a>和<a href="/privacy" target="_blank">《隐私政策》</a></p>            </form>
+        </div>
+    </div>
+</script>
+    <script id="phoneLoginModal" type="text/template">
+
+    <div class="row bg-white login-modal phonelogin-modal">
+        <div class="col-md-12 login-wrap">
+            <form action="/api/user/phonelogin" method="POST" role="form" class="mt15">
+                <div class="form-group">
+                    <label for="phone" class="control-label required">手机号</label>
+                    <input type="text" class="form-control phonelogin--phone" name="phone" tabindex="1" required placeholder="11 位手机号"
+                           autocomplete="off">
+                    <span class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="authCode" class="control-label required">验证码</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control bindphone--code" name="authCode" placeholder="短信验证码">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default user-bind__phone-vaild-btn" type="button">获取验证码</button>
+                        </span>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+                <div class="form-group">
+                    <a 
+                                                            href="/user/login"
+                                class="SFRegister"
+                                                >密码登录（手机号或 Email）</a>
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pull-right pl20 pr20" tabindex="3"
+                            onclick='ga("send", "event", "email login button", "clicked", "login modal");'>登录
+                    </button>
+                </div>
+            </form>
+            <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFLogin
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    注册新账号
+            </a>
+</div>
+<p class="text-muted text-center mb15">继续即表示你同意<a href="/tos" target="_blank">《服务条款》</a>和<a href="/privacy" target="_blank">《隐私政策》</a></p>        </div>
+    </div>
+</script>
+
+
+<script>
+    window.serverTime = 1574330802000;
+</script>
+
+<script>
+    (function (w) {
+        w.SF = {
+            staticUrl: "https://cdn.segmentfault.com/v-5dcd2518"
+        };
+        w.SF.token = (function () {
+    var _V7zvD = 'b9a'//'YY'
++//'k'
+'b4'+'Z'//'Z'
++''///*'I1H'*/'I1H'
++//'AE'
+'09f'+''///*'tl'*/'tl'
++'F9n'//'F9n'
++//'k0M'
+'c54'+//'Jo'
+'8'+//'O'
+'433'+//'d'
+'35'+'918'//'7'
++'2'//'f'
++'56'//'8u'
++'ce'//'Y1'
++//'nA'
+'13'+//'hn'
+'2e2'+//'dU'
+'c'+'5T'//'5T'
++//'cAC'
+'d', _c7iBsab = [[5,6],[8,11],[31,33]];
+
+    for (var i = 0; i < _c7iBsab.length; i ++) {
+        _V7zvD = _V7zvD.substring(0, _c7iBsab[i][0]) + _V7zvD.substring(_c7iBsab[i][1]);
+    }
+
+    return _V7zvD;
+})();;
+    })(window);
+
+                var lock = {
+        type: "",
+        text: '',
+        table: {"ban_post":[1,"\u4f60\u5df2\u7ecf\u88ab\u7981\u8a00, \u65e0\u6cd5\u8fdb\u884c\u6b64\u64cd\u4f5c, \u5982\u6709\u7591\u4e49\u8bf7\u63d0\u4ea4\u7533\u8bc9, \u6216\u8005\u53d1\u90ae\u4ef6\u5230pr@segmentfault.com"]}
+    };
+
+        var ddosMode = false;
+    
+        (function (currentUrl) {
+        if (typeof URL != 'undefined') {
+            var baseUrl = new URL('https://segmentfault.com');
+
+            if (baseUrl.protocol != currentUrl.protocol
+                || baseUrl.host != currentUrl.host) {
+                window.location.href = baseUrl.protocol + '//' + baseUrl.host
+                    + currentUrl.pathname + currentUrl.search + currentUrl.hash;
+            }
+        }
+    })(window.location);
+    </script>
+
+             <script crossorigin="" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/assets.js"></script>
+                 
+        <script crossorigin="" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/post.min.js"></script>
+            
+
+<script>
+if (!!navigator.userAgent.match(/MicroMessenger/i)) {
+    require.config({
+        paths: { weixin_jsapi: '//res.wx.qq.com/open/js/jweixin-1.2.0' }
+    });
+
+    require(['weixin_jsapi'], function (wx) {
+        var share = {"title":"vue.js\u5b9e\u73b0\u4e00\u4e2a\u4f1a\u52a8\u7684\u7b80\u5386(\u5305\u542b\u5e95\u90e8\u5bfc\u822a\u529f\u80fd\uff0c\u7f16\u8f91\u529f\u80fd,\u6dfb\u52a0\u4e86\u7528\u6237\u81ea\u5b9a\u4e49\u5199\u5b57\u901f\u5ea6\u529f\u80fd)","desc":"\u9996\u5148\u8981\u5206\u6790\u6253\u5b57\u7684\u539f\u7406\u5b9e\u73b0\uff0c\u5047\u8bbe\u6211\u4eec\u5b9a\u4e49\u4e00\u4e2a\u5b57\u7b26\u4e32str,\u5b83\u7b49\u4e8e\u4e00\u957f\u4e32\u6ce8\u91ca\u52a0CSS\u4ee3\u7801\uff0c\u5e76\u4e14\u6211\u4eec\u770b\u5230\uff0c\u5f53css\u4ee3\u7801\u5199\u5b8c\u4e00\u4e2a\u5206\u53f7\u7684\u65f6\u5019\uff0c\u5b83\u5199\u7684\u6837\u5f0f\u5c31\u4f1a\u751f\u6548\u3002\u6211\u4eec\u77e5\u9053\u8981\u60f3\u8ba9\u4e00\u6bb5CSS\u4ee3\u7801\u5728\u9875\u9762\u751f\u6548\uff0c\u53ea\u9700\u8981\u5c06\u5176\u653e\u5728\u4e00\u5bf9&lt;style&gt;\u6807\u7b7e\u5bf9\u4e2d\u5373\u53ef\u3002\u6bd4\u5982:","link":"https:\/\/segmentfault.com\/a\/1190000018779991","imgUrl":"https:\/\/segmentfault.com\/img\/bVbqXwx?w=1505&amp;h=815"};
+        share.title += ' - SegmentFault 思否';
+
+        $.getJSON('/api/util/weixin/jsapi', function (o) {
+            methods = o.data.jsApiList.slice();
+
+            wx.config(o.data);
+            wx.error(console.error);
+            wx.ready(function () {
+                methods.forEach(function (method) {
+                    wx[method](share);
+                });
+            });
+        });
+    });
+}
+</script>
+
+<script src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/ads.min.js" type="text/javascript"></script>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-918487-8']);
+    _gaq.push(['_trackPageview']);
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                
+        
+
+                
+
+    ga('create', 'UA-918487-8', 'auto', {
+        'userID'
+    : 0,
+        'createdTime'
+    : 0,
+        'now'
+    : 1574330802,
+        'allowLinker'
+    : true });
+    ga('require', 'linker');
+    ga('linker:autoLink', ['docs.segmentfault.com'] );
+    ga('set', 'dimension1', 'guest');
+    ga('send', 'pageview');
+
+        if(document.getElementById('UGTKzPZbRoOS')){
+        UGTKzPZbRoOS='No';
+    } else {
+        UGTKzPZbRoOS='Yes';
+    }
+
+    if(typeof ga !=='undefined'){
+        ga('send','event','Blocking Ads',UGTKzPZbRoOS,{'nonInteraction':1});
+    } else if(typeof _gaq !=='undefined'){
+        _gaq.push(['_trackEvent','Blocking Ads',UGTKzPZbRoOS,undefined,undefined,true]);
+    }
+
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e23800c454aa573c0ccb16b52665ac26";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+<iframe id="p_analyse_iframe" src="./vue.js实现一个会动的简历(包含底部导航功能，编辑功能,添加了用户自定义写字速度功能) - eveningwater - SegmentFault 思否_files/saved_resource.html" style="display: none;"></iframe><div id="bindPhoneModal" style="display: none">
+    <div class="bg-white bindphone-model">
+        <div class="alert alert-warning" role="alert">
+            为了保证账号安全，请先绑定手机
+        </div>
+        <div>
+            <form class="form-horizontal form__bindphone-apply" style="background-color:#fff;padding:0;">
+                <div class="form-group ">
+                    <label for="phoneNumber" class="col-sm-3 control-label required">手机号码test</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control bindphone--phone" id="phoneNumber" name="phone" placeholder="仅只支持大陆手机号">
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="authCode" class="col-sm-3 control-label required">验证码</label>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control bindphone--code" name="code" placeholder="短信验证码">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default user-bind__phone-vaild-btn" type="button">获取验证码</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div><div id="atwho-container"><div id="atwho-ground-3f26db711574330804083"><div class="atwho-view" id="at-view-64"><ul class="atwho-view-ul"></ul></div></div></div><st-div id="__selection-translator__"> <st-div class="__st-box__" style="display: none; position: fixed; z-index: 99999; left: 0px; top: 0px; transform: translateX(221px) translateY(485px);"> <st-header> <st-span class="st-icon-pin" title="固定"></st-span> <st-span class="st-icon-down-open" title="展开"></st-span> <st-span class="st-icon-cog" title="设置"></st-span> </st-header> <st-div class="__query-form__" style="display: none;"> <st-div> <textarea placeholder="输入要翻译的句子或单词"></textarea> </st-div> <st-div> <select> <option value="">自动判断</option> <option value="zh">中文</option><option value="zh-CN">中文(简体)</option><option value="zh-HK">中文(香港)</option><option value="zh-TW">中文(繁体)</option><option value="en">英语</option><option value="ja">日语</option><option value="ko">朝鲜语</option><option value="de">德语</option><option value="fr">法语</option><option value="ru">俄语</option><option value="th">泰语</option><option value="af">南非语</option><option value="ar">阿拉伯语</option><option value="az">阿塞拜疆语</option><option value="be">比利时语</option><option value="bg">保加利亚语</option><option value="ca">加泰隆语</option><option value="cs">捷克语</option><option value="cy">威尔士语</option><option value="da">丹麦语</option><option value="dv">第维埃语</option><option value="el">希腊语</option><option value="eo">世界语</option><option value="es">西班牙语</option><option value="et">爱沙尼亚语</option><option value="eu">巴士克语</option><option value="fa">法斯语</option><option value="fi">芬兰语</option><option value="fo">法罗语</option><option value="gl">加里西亚语</option><option value="gu">古吉拉特语</option><option value="he">希伯来语</option><option value="hi">印地语</option><option value="hr">克罗地亚语</option><option value="hu">匈牙利语</option><option value="hy">亚美尼亚语</option><option value="id">印度尼西亚语</option><option value="is">冰岛语</option><option value="it">意大利语</option><option value="ka">格鲁吉亚语</option><option value="kk">哈萨克语</option><option value="kn">卡纳拉语</option><option value="kok">孔卡尼语</option><option value="ky">吉尔吉斯语</option><option value="lt">立陶宛语</option><option value="lv">拉脱维亚语</option><option value="mi">毛利语</option><option value="mk">马其顿语</option><option value="mn">蒙古语</option><option value="mr">马拉地语</option><option value="ms">马来语</option><option value="mt">马耳他语</option><option value="nb">挪威语(伯克梅尔)</option><option value="nl">荷兰语</option><option value="ns">北梭托语</option><option value="pa">旁遮普语</option><option value="pl">波兰语</option><option value="pt">葡萄牙语</option><option value="qu">克丘亚语</option><option value="ro">罗马尼亚语</option><option value="sa">梵文</option><option value="se">北萨摩斯语</option><option value="sk">斯洛伐克语</option><option value="sl">斯洛文尼亚语</option><option value="sq">阿尔巴尼亚语</option><option value="sv">瑞典语</option><option value="sw">斯瓦希里语</option><option value="syr">叙利亚语</option><option value="ta">泰米尔语</option><option value="te">泰卢固语</option><option value="tl">塔加路语</option><option value="tn">茨瓦纳语</option><option value="tr">土耳其语</option><option value="ts">宗加语</option><option value="tt">鞑靼语</option><option value="uk">乌克兰语</option><option value="ur">乌都语</option><option value="uz">乌兹别克语</option><option value="vi">越南语</option><option value="xh">班图语</option><option value="zu">祖鲁语</option> </select> <st-div class="__exchange__"> <st-span class="st-icon-exchange"></st-span> </st-div> <select> <option value="">自动选择</option> <option value="zh">中文</option><option value="zh-CN">中文(简体)</option><option value="zh-HK">中文(香港)</option><option value="zh-TW">中文(繁体)</option><option value="en">英语</option><option value="ja">日语</option><option value="ko">朝鲜语</option><option value="de">德语</option><option value="fr">法语</option><option value="ru">俄语</option><option value="th">泰语</option><option value="af">南非语</option><option value="ar">阿拉伯语</option><option value="az">阿塞拜疆语</option><option value="be">比利时语</option><option value="bg">保加利亚语</option><option value="ca">加泰隆语</option><option value="cs">捷克语</option><option value="cy">威尔士语</option><option value="da">丹麦语</option><option value="dv">第维埃语</option><option value="el">希腊语</option><option value="eo">世界语</option><option value="es">西班牙语</option><option value="et">爱沙尼亚语</option><option value="eu">巴士克语</option><option value="fa">法斯语</option><option value="fi">芬兰语</option><option value="fo">法罗语</option><option value="gl">加里西亚语</option><option value="gu">古吉拉特语</option><option value="he">希伯来语</option><option value="hi">印地语</option><option value="hr">克罗地亚语</option><option value="hu">匈牙利语</option><option value="hy">亚美尼亚语</option><option value="id">印度尼西亚语</option><option value="is">冰岛语</option><option value="it">意大利语</option><option value="ka">格鲁吉亚语</option><option value="kk">哈萨克语</option><option value="kn">卡纳拉语</option><option value="kok">孔卡尼语</option><option value="ky">吉尔吉斯语</option><option value="lt">立陶宛语</option><option value="lv">拉脱维亚语</option><option value="mi">毛利语</option><option value="mk">马其顿语</option><option value="mn">蒙古语</option><option value="mr">马拉地语</option><option value="ms">马来语</option><option value="mt">马耳他语</option><option value="nb">挪威语(伯克梅尔)</option><option value="nl">荷兰语</option><option value="ns">北梭托语</option><option value="pa">旁遮普语</option><option value="pl">波兰语</option><option value="pt">葡萄牙语</option><option value="qu">克丘亚语</option><option value="ro">罗马尼亚语</option><option value="sa">梵文</option><option value="se">北萨摩斯语</option><option value="sk">斯洛伐克语</option><option value="sl">斯洛文尼亚语</option><option value="sq">阿尔巴尼亚语</option><option value="sv">瑞典语</option><option value="sw">斯瓦希里语</option><option value="syr">叙利亚语</option><option value="ta">泰米尔语</option><option value="te">泰卢固语</option><option value="tl">塔加路语</option><option value="tn">茨瓦纳语</option><option value="tr">土耳其语</option><option value="ts">宗加语</option><option value="tt">鞑靼语</option><option value="uk">乌克兰语</option><option value="ur">乌都语</option><option value="uz">乌兹别克语</option><option value="vi">越南语</option><option value="xh">班图语</option><option value="zu">祖鲁语</option> </select> </st-div> <st-div> <select> <option value="YouDao">有道翻译</option> <option value="BaiDu">百度翻译</option> <option value="Google">谷歌翻译</option> <option value="GoogleCN">谷歌翻译（国内）</option> </select> <st-div class="__action-list__"> <st-div class="__button__ __btn-translate__">翻译 <st-span class="st-icon-down-dir"></st-span> </st-div> <st-div class="__expand__"> <st-div class="__button__">朗读</st-div> <st-div class="__button__">复制</st-div> </st-div> </st-div> </st-div> </st-div> <st-div class="__translate-result__" style="display: none;">正在查询，请稍候……</st-div> <st-div class="__translate-result__"> <st-div style="display: none;"> <st-span></st-span> <st-span class="__retry__">重试</st-span> </st-div> <st-div> <st-div class="__phonetic__"> <st-span style="display: none;"></st-span> <st-span class="__copy-and-read__"> <st-span>朗读</st-span> <st-span style="display: none;">复制</st-span> </st-span> </st-div> <st-div style="display: none;"> <st-ul>  </st-ul> <st-div class="__copy-and-read__"> <st-span class="__copy-and-read__">复制</st-span> </st-div> </st-div> <st-div style="display: none;">  <st-div class="__copy-and-read__"> <st-span class="__copy-and-read__">朗读</st-span> <st-span class="__copy-and-read__">复制</st-span> </st-div> </st-div> </st-div> </st-div> <st-footer> <st-span style="">via <a target="_blank" href="https://segmentfault.com/a/1190000018779991">谷歌翻译（国内）</a></st-span> </st-footer> </st-div> <st-div class="__st-btn__" style="display: none; position: fixed; z-index: 99999; left: 0px; top: 0px; transform: translateX(221px) translateY(485px);">译</st-div> </st-div><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea><textarea readonly="" style="font-size: 12pt; border: 0px; padding: 0px; margin: 0px; position: absolute; left: -9999px; top: 809px;"></textarea></body></html>

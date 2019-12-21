@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#tcp">tcp</a><br><a class="wiz_toc h1" href="#ip">ip</a><br><a class="wiz_toc h1" href="#端口">端口</a><br><a class="wiz_toc h2" href="#问题1：我怎么知道应该使用什么端口？">问题1：我怎么知道应该使用什么端口？</a><br><a class="wiz_toc h2" href="#问题2：一共由多少端口？">问题2：一共由多少端口？</a><br><a class="wiz_toc h1" href="#总结">总结</a><br><a class="wiz_toc h1" href="#服务器简单测试">服务器简单测试</a><br><a class="wiz_toc h1" href="#如何响应">如何响应</a><br><a class="wiz_toc h1" href="#总结-2">总结</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<h2 id="tcp">tcp</h2>
+
+<p>http是一个控制如何书写内容的协议; <br>
+tcp是控制如何传输的协议;</p>
+
+<ol class="wiz-list-level1">
+<li><a href="https://www.nowcoder.com/questionTerminal/63c8b45c91a544bd8febc1f1ff02e3b5?toCommentId=73766" title="null">TCP 和 UDP 的区别是什么</a> <br>
+简答：TCP 可靠(有没有连接上都会知道)、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。搞定。</li>
+<li><span><a href="https://github.com/jawil/blog/issues/14" title="null">TCP 的三次握手指的是什么</a> <br>
+简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：</span><br>
+
+<p>1. 客户端：我要连接你了，可以吗 <br>
+ 2. 服务端：嗯，我准备好了，连接我吧 <br>
+ 3. 客户端：那我连接你咯。 <br>
+ 4. 开始后面步骤</p></li>
+</ol>
+
+<p>有关三次握手的理解: <br>
+为了准确无误地将数据送达目标处， TCP 协议采用了三次握手 <br>
+（three-way handshaking） 策略。 用 TCP 协议把数据包送出去后， TCP不会对传送后的情况置之不理， 它一定会向对方确认是否成功送达;</p>
+
+<p>握手过程中使用了 TCP 的标志（flag）-SYN（synchronize） 和 <br>
+ACK（acknowledgement） 。</p>
+
+<p>发送端首先发送一个带 SYN 标志的数据包给对方。 接收端收到后，回传一个带有 SYN/ACK 标志的数据包以示传达确认信息。 最后， 发 <br>
+送端再回传一个带 ACK 标志的数据包， 代表“握手”结束。</p>
+
+<p>若在握手过程中某个阶段莫名中断， TCP 协议会再次以相同的顺序发送相同的数据包。</p>
+
+<p><img src="(7)Node.js_files/e9c0471d-3ac9-425a-944c-a727c8cbda88.jpg" alt="" title=""></p>
+
+<h2 id="ip">ip</h2>
+
+<p>在网中的重要节点处称为网关(下面讲路由的时候有讲到;)</p>
+
+<ul>
+<li>你从电信那里买来带宽，一年一千多。</li>
+<li>电信为你提供 DNS 服务。</li>
+<li>你买了一个路由器，然后用电脑和手机分别连接路由器广播出来的无线 WIFI。</li>
+<li>只要路由器连上电信的服务器，那么路由器就会有一个「外网 IP」，比如「14.17.32.211」就是一个外网 IP。这就是你在互联网中的地址。</li>
+<li><span>但是如果你重启路由器，那么你很有「可能」被重新分配一个「外网 IP」，也就是说 <strong>你的路由器没有「固定的外网 IP」</strong></span></li>
+<li><span>你可以花每年几千块钱租用一个「固定的外网 IP」，但是显然不会这么浪费钱。像腾讯、阿里这样的大公司租用了很多外网 IP，这样才能对我们提供稳定的服务。</span></li>
+<li><span>但是有个问题，你的路由器的外网 IP 如果是14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？答案是「内网 IP」</span></li>
+<li><span>路由器会在你家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx。</span><br>
+
+<ul><li>一般路由会给自己分配一个好记的内网 IP，如 192.168.1.1</li>
+<li>然后路由会给每一个内网中的设备分配一个不同的内网 IP，如电脑是 192.168.1.2，手机是 192.168.1.3，以此类推。</li>
+<li>现在路由器有两个 IP，一个外网 IP（14.17.32.211）和一个内网 IP（192.168.1.1）
+
+<ul><li>内网中的设备可以互相访问（比如你可以用电脑或手机进入 <a href="http://192.168.1.1/" title="null">http://192.168.1.1</a> 来查看你的路由器），但是不能<strong>直接</strong>访问外网，内网设备想要访问外网，就必须经过路由器中转。</li>
+<li>外网中的设备可以互相访问（比如 qq.com 可以把首页发送给你的路由器，你的路由器有外网 IP），但是外网中的设备无法访问你的内网设备（这很好理解，内网是一个封闭的网络，外人进不来，所以实际上 qq.com 无法直接把首页放送给你的电脑和手机）
+
+<ul><li>问题来了，那 qq.com 是怎么把首页发送到我的手机上的呢？答案是通过路由器来中转。</li>
+<li>路由器接收到 qq.com 的页面后，把页面发送给你的电脑或手机。路由器知道如何给这些信息<strong>指路</strong>，路由器就是一个指路人，这就是「路由」两个字的来历。</li>
+<li>路，就是「必由之路」中的路。由，就是「必由之路」中的由（由是经过、缘由的意思）。所有的信息都要经过路由器，然后被指向一条它该去的路。</li></ul></li>
+<li>也就是说内网和外网就像两个隔绝的空间，无法互通，唯一的联通点就是路由器（因为路由器既有外网 IP 也有内网 IP），所以路由器有时候也被叫做「网关」，这个「关」是「一夫当关，万夫莫开」的「关」。如果路由器到电信的连接中断了，那么内网中所有的设备也就无法上网了。（这很好理解，相当于唯一一条出去的路断了）</li></ul></li></ul></li>
+<li>除了内网 IP 和外网 IP，还有两个特别特殊的 IP，就是本地 IP：127.0.0.1。本地 IP 永远表示设备自己。不信你可以 ping 127.0.0.1 一下，会发现只需要 0.01 ms 就得到了响应（你 ping qq.com 需要几十毫秒才得到响应）
+
+<ul><li>默认情况下，hosts 文件里会有一行<code>127.0.0.1 localhost</code>，意思就是 localhost 指向 127.0.0.1，所以 localhost 也表示设备自己。不信你 ping localhost 试试，会发现实际上是在 ping 127.0.0.1</li></ul></li>
+<li>还有一个特别特殊的 IP：0.0.0.0，它不表示任何设备。这个 IP 不同的地方含义不同，以后我们会用到，用到的时候再说意思。</li>
+</ul>
+
+<h2 id="端口">端口</h2>
+
+<p>你想要访问一个设备（前提是你使用的是 TCP 或 UDP 协议。还记得吗，HTTP 就使用了 TCP），只指定 IP 是不够的，还<strong>必须</strong>指定端口（Port）。</p>
+
+<p>端口其实就是一个编号，并不是一种硬件。</p>
+
+<p>一个服务器（硬件）不一定只提供一种服务，比如一个服务器既提供 HTTP 服务，又提供 FTP 服务，还提供 SMTP 服务（邮件服务），那么只用一个 IP 是无法告诉服务器你想要使用哪种服务。</p>
+
+<p>所以这里有一个重要的原则：一个端口对应一个服务。</p>
+
+<p>比如</p>
+
+<ol class="wiz-list-level1">
+<li>要提供 HTTP 服务你最好使用 80 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
+<li>要提供 HTTPS 服务你最好使用 443 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
+<li>要提供 FTP 服务你最好使用 21 端口（能不能使用别的端口？可以，不过不建议你违反约定）</li>
+</ol>
+
+<h3 id="问题1：我怎么知道应该使用什么端口？">问题1：我怎么知道应该使用什么端口？</h3>
+
+<p><a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" title="null">维基百科</a> 把 0 到 1023 号端口对应的服务都告诉你了，点进去看看吧。</p>
+
+<h3 id="问题2：一共由多少端口？">问题2：一共由多少端口？</h3>
+
+<p>每个机器一共有 65535（2的16次方减1）个端口（这是协议规定的）。不过这些端口的使用由一些规定</p>
+
+<ol class="wiz-list-level1">
+<li>0 到 1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</li>
+<li>其他端口可以给普通用户使用</li>
+<li>如果一个端口正在提供服务，也就是被占用了，那么就不能再使用这个端口。除非你先停掉正在占用这个端口的服务。以后你们会经常遇到这个问题。</li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<p>上面都是 TCP/IP 相关的知识，如果你记不住，就记住下面这句话：</p>
+
+<blockquote>
+  <p>使用 HTTP 协议访问另一个 IP 时，必须同时提供 IP 和端口号，缺一不可。</p>
+</blockquote>
+
+<p>那么问题来了</p>
+
+<blockquote>
+  <p>我访问 <a href="http://qq.com/" title="null">http://qq.com</a> 时并没有提供端口号，为什么我依然可以访问</p>
+</blockquote>
+
+<p>答：因为<strong>浏览器</strong>帮你加了默认端口号 80</p>
+
+<h2 id="服务器简单测试">服务器简单测试</h2>
+
+<p>测试1: <br>
+代码见: <br>
+<a href="https://raw.githubusercontent.com/FrankFang/nodejs-test/7f1a0ce15c47a6c2c938fe322f042e5d62bc7d01/server.js">https://raw.githubusercontent.com/FrankFang/nodejs-test/7f1a0ce15c47a6c2c938fe322f042e5d62bc7d01/server.js</a> <br>
+<img src="(7)Node.js_files/7da1d63f-ade2-47f4-a4c6-8182dd914346.jpg" alt="" title=""> <br>
+服务端输入<code>node server.js 8888</code>之后服务端就一直在等,一直到客户端输入: <br>
+<img src="(7)Node.js_files/d02e8c7a-12bf-4674-bb6d-5d8d0bb0093f.jpg" alt="" title=""></p>
+
+<p><img src="(7)Node.js_files/d38ba615-a792-4553-a08b-b1c1fed68f2c.png" alt="" title=""></p>
+
+<p>注意:这里的192.168.0.104是这里的电脑主机(就是这台电脑)的ip(可以用ifconfig/ipconfig命令)</p>
+
+<h2 id="如何响应">如何响应</h2>
+
+<p>respond.write('hi\n')写第四部分； <br>
+respond.end()：结束响应；</p>
+
+<p>response.setHeader('Content-Type', 'text/javascript; charset=utf-8')写第二部分；</p>
+
+<p>response.statusCode = 404 <br>
+写第一部分；</p>
+
+<h2 id="总结-2">总结</h2>
+
+<p>在浏览器里面输入网址,然后敲回车,发生了什么: <br>
+首先,浏览器会看你缺什么,缺端口号,加一个端口号，缺路径,加一个<code>/</code>;缺协议,帮你加一个http;</p>
+
+<p>第一次是查询DNS，以百度为例,我想道<code>www.baidu.com</code>的ip是多少,于是浏览器向DNS发起了一次询问:电信啊,百度的Ip是多少,我想访问,好的,我给你一个真的百度Ip;</p>
+
+<p>拿到这个Ip之后,浏览器向这个Ip发起了请求,请求的内容见request headers;</p>
+
+<p>发了之后,<strong>百度的这个服务器接收了这个请求,他会看一下你的路径是什么,根据路径会设置一些header(详见response.setheader()),然后返回给你一个html(利用response.write()</strong>),然后结束(response.end()),结束之后就会把内容传给我下载;</p>
+
+<p>下载完之后就把html解析出来给我们看见;边解析还要边找,看我们还有没我们请求的东西(比如png图片,gif动态图,css,js);all东西请求完了就拼给用户看；</p></body></html>

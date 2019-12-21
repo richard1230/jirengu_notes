@@ -1,0 +1,191 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#去除下划线">去除下划线</a><br><a class="wiz_toc h1" href="#logo">logo</a><br><a class="wiz_toc h2" href="#宽度和高度,字体">宽度和高度,字体</a><br><a class="wiz_toc h2" href="#几个小问题的解决">几个小问题的解决</a><br><a class="wiz_toc h1" href="#垂直距离">垂直距离</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<p><img src="(10_1)css_files/6dd0c449-e686-4120-8cad-aa973b91531d.png" alt="" title=""> <br>
+inherit:让a标签和其爸爸的相同； <br>
+默认是白色,我们可以改一下为红色;</p>
+
+<p><img src="(10_1)css_files/b0daddc4-84df-4d26-a4c9-c15e78666c23.png" alt="" title=""> <br>
+继承的话是可以继承你爷爷的;</p>
+
+<p><img src="(10_1)css_files/4e1fa459-62c8-43b9-978e-9bb93a608a81.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/82dc2a0d-5a2c-4b6f-93c0-4407906e56e8.png" alt="" title=""> <br>
+下面是a继承至body; <br>
+<img src="(10_1)css_files/70b01b8f-55d4-487f-9f8a-ddecafd6f16f.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/b69335d5-0cf7-4804-8f24-cc478dd12aa3.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/67d26d05-4ded-4fea-845d-e39b2735b15b.png" alt="" title=""></p>
+
+<p>所有元素如果没有意外会继承自祖先的color;</p>
+
+<p><img src="(10_1)css_files/d1b787f3-9f40-4588-bf09-814057f5ff58.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/e7cbcf25-ead1-4011-a201-bc13648fb342.png" alt="" title=""></p>
+
+<h2 id="去除下划线">去除下划线</h2>
+
+<p>td:n即可；再按一个tab键; <br>
+原来是有下划线的; <br>
+<img src="(10_1)css_files/3a3dc627-16fb-4dd7-a99b-0097169c749b.png" alt="" title=""></p>
+
+<p>下划线没了: <br>
+<img src="(10_1)css_files/0a6aa2bc-94a7-44ef-bd3f-092b8585cbbc.png" alt="" title=""></p>
+
+<h2 id="logo">logo</h2>
+
+<h3 id="宽度和高度,字体">宽度和高度,字体</h3>
+
+<p><img src="(10_1)css_files/1afb8785-d41b-49a4-9d9b-aa292cfa0443.jpg" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/bac9ca2b-edd1-48b3-b381-e8a36c5b198a.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/f046408b-f253-46fd-adee-806baec34daf.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/f374a0fc-7c3b-4d47-a5cd-507292745010.png" alt="" title=""></p>
+
+<p>发现没什么变化;因为这是需要下载的一个字体</p>
+
+<p><img src="(10_1)css_files/9a7f1c0b-16bf-4a83-981b-9121c2a6a653.jpg" alt="" title=""></p>
+
+<p>打开word： <br>
+<img src="(10_1)css_files/356797ca-df9d-4c2a-9063-204f9b2cee96.jpg" alt="" title=""></p>
+
+<p>替换成Arial Black: <br>
+<img src="(10_1)css_files/a051dfe1-3f62-40db-9017-280a97a2ae59.png" alt="" title=""></p>
+
+<p>有效果了: <br>
+<img src="(10_1)css_files/0bf3818a-f2a2-4ffc-831b-c4cf360357c5.png" alt="" title=""></p>
+
+<h3 id="几个小问题的解决">几个小问题的解决</h3>
+
+<p>选择器过于简单,会影响别人:(好几处都变粗了) <br>
+<img src="(10_1)css_files/a0ec00a8-ea12-473d-8961-2b88dfb8d7c8.png" alt="" title=""></p>
+
+<p><code>card</code>有好几处; <br>
+<img src="(10_1)css_files/67992cbb-338d-46da-870d-3f3464b70977.png" alt="" title=""></p>
+
+<p>这里怎么解决这个问题？ <br>
+加范围: <br>
+<img src="(10_1)css_files/f549ca1f-a660-4393-811a-fc1f2018718a.jpg" alt="" title=""> <br>
+现在就好了 <br>
+<img src="(10_1)css_files/fec795de-fd38-451c-82e1-d1e655f15b9f.png" alt="" title=""> <br>
+涮新的时候需要把开发者工具打开？才好</p>
+
+<p>一样的大小: <br>
+<img src="(10_1)css_files/a4cfe3b1-708e-4477-8436-25abf1cfab18.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/251457ce-a7c8-4304-9924-4ec69a294e76.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/ab503b45-5ffc-4e8e-b332-6a405fc46064.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/fd001eb2-308d-48a8-9744-9af420a3f1d1.png" alt="" title=""></p>
+
+<p>这就叫继承；</p>
+
+<p><img src="(10_1)css_files/a9e347fa-500f-477b-bf24-e40ab0166ab5.jpg" alt="" title=""> <br>
+把所有看不见的都缩成一个空格!</p>
+
+<p>没有写成一行: <br>
+<img src="(10_1)css_files/fb0bdb39-f74d-4ec1-a655-e901013c79eb.png" alt="" title=""></p>
+
+<p>写成一行: <br>
+<img src="(10_1)css_files/c4ccf2c2-c94d-4229-a01b-bc80f0528ba2.png" alt="" title=""></p>
+
+<p>留一点空格,但又不至于很大: <br>
+<img src="(10_1)css_files/475e5e12-ffdb-4da5-a9a4-827681692fda.png" alt="" title=""> <br>
+改变颜色: <br>
+<img src="(10_1)css_files/9e109e00-b0c2-4188-9acc-6b2d9b7b6c45.png" alt="" title=""></p>
+
+<h2 id="垂直距离">垂直距离</h2>
+
+<p>高49,宽39 <br>
+<img src="(10_1)css_files/8903bbee-2287-4082-825b-011bc710b30e.jpg" alt="" title=""></p>
+
+<p>目前关于这个标签是没有居中的;(上下的空间一样就是居中) <br>
+先居中: <br>
+<img src="(10_1)css_files/958c6b80-1ac3-4e20-84bb-80f4475d6dad.png" alt="" title=""></p>
+
+<p>430*33: <br>
+<img src="(10_1)css_files/cd7f43a9-a3ab-49fe-acc2-9f59ba55b33c.jpg" alt="" title=""> <br>
+左边这个logo也是33: <br>
+<img src="(10_1)css_files/051c15e5-51ff-43f5-8b99-8504e5892b54.jpg" alt="" title=""> <br>
+补至40: <br>
+<img src="(10_1)css_files/d94c3fa3-10e8-4672-9917-c0c5747bea61.jpg" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/d1443a13-5975-4b37-b7e5-8a1feef458a9.jpg" alt="" title=""> <br>
+我这里: <br>
+<img src="(10_1)css_files/24bcd21e-245c-4b90-b39f-63c956b7b4fc.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/01156082-eefe-40fe-a1ef-8ff54513672d.png" alt="" title=""></p>
+
+<p>将这一段注释删掉: <br>
+<img src="(10_1)css_files/01f596ed-a958-46d3-be0d-fdcd001c4438.png" alt="" title=""></p>
+
+<div id="wiz_cm_1573897156665_3568" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">/*&lt;form  action="index2.html"  method="POST"&gt;
+&lt;input  type="text"  name = "xxx"&gt;
+&lt;input  type="password"  name = "yyy"&gt;
+&lt;input  type="submit"  value="提交"&gt;
+&lt;label  &gt;  &lt;input  type="checkbox"  &gt; 爱我&lt;/label&gt;
+&lt;button&gt;button&lt;/button&gt;
+&lt;/form&gt; */
+</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573897156665_3568"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 200px; min-width: 396.578px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*&lt;form  action="index2.html"  method="POST"&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;input  type="text"  name = "xxx"&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;input  type="password"  name = "yyy"&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;input  type="submit"  value="提交"&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;label  &gt;  &lt;input  type="checkbox"  &gt; 爱我&lt;/label&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;button&gt;button&lt;/button&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">&lt;/form&gt; */</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 200px;"></div><div class="CodeMirror-gutters" style="height: 230px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p>将下面修改为7即可:</p>
+
+<p><img src="(10_1)css_files/abe474e1-7f21-4688-9ed4-90f0cad70d6a.png" alt="" title=""></p>
+
+<p>现在看一看: <br>
+<img src="(10_1)css_files/a33eec3a-030b-41a9-af8a-51df0b2e1f46.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/6eff1a0f-6d56-41ec-b19f-df3d07b93421.png" alt="" title=""></p>
+
+<p>注意:此时还需要在源文件里面进行修改: <br>
+<img src="(10_1)css_files/7f3f3603-458b-4480-aaf9-0b7e531c0a50.png" alt="" title=""></p>
+
+<p>现在高度:26 <br>
+<img src="(10_1)css_files/3623f21d-e5db-415b-a1b4-b086aa9cd58f.jpg" alt="" title=""> <br>
+我自己的这里是30左右: <br>
+<img src="(10_1)css_files/245b3b7e-4c42-4178-983f-e6a29456faea.jpg" alt="" title=""> <br>
+而标准的是38左右: <br>
+<img src="(10_1)css_files/1730aa9a-30b2-4bc5-8bd3-fc93c2196554.jpg" alt="" title=""> <br>
+怎么调: <br>
+直接补到topNavBar即可:</p>
+
+<p><img src="(10_1)css_files/9a568fc4-ef70-49d6-844a-cba5485beaa1.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/4c799dd2-e772-44d7-8b7e-ec60fec8f05f.jpg" alt="" title=""></p>
+
+<p>这是默认的距离: <br>
+<img src="(10_1)css_files/b0273248-b2da-489e-9a65-32ac8abd148b.png" alt="" title=""></p>
+
+<p>外边距设置为0;(此时上边就少了8像素) <br>
+因为margin默认就是8px; <br>
+<img src="(10_1)css_files/1cbc5b92-619c-44e7-a49a-9e9d13523f41.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/8577433e-d402-492e-8166-8db419361a1e.png" alt="" title=""></p>
+
+<p>如何再补8px：</p>
+
+<p><img src="(10_1)css_files/8d14d676-2913-4314-b876-3077c832a78c.png" alt="" title=""></p>
+
+<p><img src="(10_1)css_files/ab0e35f0-4460-4e8d-9490-4ab63628850a.png" alt="" title=""></p>
+
+<p>再看一看宽(为16): <br>
+<img src="(10_1)css_files/ed3c2c25-1232-4b0e-9489-0dd5de02520b.jpg" alt="" title=""></p>
+
+<p>这样的话,基本就做出来了: <br>
+<img src="(10_1)css_files/1d5f5328-2e84-403d-a3af-cd218bb8aaaa.png" alt="" title=""></p>
+
+<p>代码优化: <br>
+<img src="(10_1)css_files/b9f62b62-1fb8-490d-81b8-5e553a68c113.jpg" alt="" title=""></p></body></html>

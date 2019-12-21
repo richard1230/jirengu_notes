@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#设置高度">设置高度</a><br><a class="wiz_toc h1" href="#如何查找错误">如何查找错误</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<h2 id="设置高度">设置高度</h2>
+
+<p>黑色背景的div的高度由什么决定的？ <br>
+由里面文档流元素的高度总和决定的! <br>
+<img src="(11_1)css布局和定位_files/f56d5d44-2676-46b3-96c6-0efe8749fd12.jpg" alt="" title=""> <br>
+但是这里文档流元素到这里就停了; <br>
+怎么办呢,使用一个会出bug的属性(height,这是11节里面就已经说的这里会出一些无穷无尽的bug):</p>
+
+<p><img src="(11_1)css布局和定位_files/3cf13388-5176-4c54-a49f-ad6f5ac17c1e.jpg" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/6d78ebbb-05c1-4c1e-a327-83d62ad6dcb4.jpg" alt="" title=""></p>
+
+<p>首先要把这里的height给去掉, <br>
+<img src="(11_1)css布局和定位_files/bfc5cb1f-8596-4240-9a59-9ed2adbb7d44.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/7e6a745b-d6dd-4b85-abd0-55f2ee40bb4b.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/57521a4d-5d7f-44d2-a52f-d513af7730c9.jpg" alt="" title=""></p>
+
+<p>去掉之后:(为什么100px要比300px要高,因为这里更加具体一点)</p>
+
+<p><img src="(11_1)css布局和定位_files/c428d57a-588e-40ca-bef6-d0b5a206e101.png" alt="" title=""></p>
+
+<h2 id="如何查找错误">如何查找错误</h2>
+
+<p>如何利用开发者工具查找错误;</p>
+
+<p>这里是用开发者工具来查看:有一个错误,</p>
+
+<p><img src="(11_1)css布局和定位_files/1f769cad-30a9-4c1e-a8f8-ce9483f89819.png" alt="" title=""></p>
+
+<p>这里改一下,写成<code>515px</code>,不要有空格 <br>
+<img src="(11_1)css布局和定位_files/4ecb154d-16fe-4a86-acfb-e42368837495.png" alt="" title=""></p>
+
+<p>有的错误是在开发者工具 那里找到的 <br>
+<img src="(11_1)css布局和定位_files/e34c9218-41d0-42e6-8ce9-c30924985a84.png" alt="" title=""></p>
+
+<p>改好之后: <br>
+<img src="(11_1)css布局和定位_files/03b9569d-03f6-4a17-a27e-75faddb91f69.jpg" alt="" title=""></p>
+
+<p>banner和导航栏不是一体的,他们是一体的:(怎样让他们合为一体) <br>
+比较简单的一个方法： <br>
+让这个banner相对于屏幕固定;就是不占文档流的高度； <br>
+这里介绍脱离文档流的方法； <br>
+<code>position:fixed</code>:这里相对屏幕固定;</p>
+
+<p><img src="(11_1)css布局和定位_files/a59d8add-5f23-4891-8a76-8baa1b22e950.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/00357b47-b2fb-421a-9502-eaf63d4fc68f.jpg" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/7c9e9c09-2bcb-47a2-a15a-774de902ddca.jpg" alt="" title=""></p>
+
+<p>可以看到导航栏相对于左上角浮起来了; <br>
+脱不脱离文档流只影响一个东西:div的高度;就是这个body的高度;</p>
+
+<p><img src="(11_1)css布局和定位_files/9fd78356-5458-47b0-9d8f-747143a3f049.jpg" alt="" title=""></p>
+
+<p>不脱离的时候是下面这样的:</p>
+
+<p><img src="(11_1)css布局和定位_files/9971015c-c9fc-488e-ad90-fc265b788fcf.jpg" alt="" title=""> <br>
+此时的宽度和高度:</p>
+
+<p><img src="(11_1)css布局和定位_files/7e8e8a86-1bd5-48c6-ace8-c54b7722ca82.jpg" alt="" title=""></p>
+
+<p>脱离了文档流之后,body的高度是由什么决定的: <br>
+一个块级元素的高度是由它内部文档流高度的总和决定的;</p>
+
+<p>此时topNavBar脱离了文档流,就是说它不在文档流中; <br>
+所以body的高度他就不会包含topNavBar; <br>
+直接从banner开始算,有多高呢(1366), <br>
+<img src="(11_1)css布局和定位_files/ab9bea34-84ec-4558-a5ba-697bd2faa332.jpg" alt="" title=""></p>
+
+<p>下面是脱离之后的文档流:(高度为1306) <br>
+<img src="(11_1)css布局和定位_files/4725ea16-606e-4ef2-b71b-5d23be21ec5d.jpg" alt="" title=""></p>
+
+<p>两者之间的差值即为TopBar的高度; <br>
+一旦脱离文档流,父元素的高度就不受你控制了; <br>
+脱离文档流可以有很多种方法; <br>
+如果一个东西是fix定位的,就会发现它的宽度不会往外扩展,会往内缩;</p>
+
+<p>没有fix的时候,div默认占一行;(如下图 <br>
+<img src="(11_1)css布局和定位_files/6bf354f7-3117-42de-8c2e-174ce53ab66e.jpg" alt="" title=""></p>
+
+<p>有fix的时候就缩起来了: <br>
+<img src="(11_1)css布局和定位_files/04cfcb0e-cc59-4689-bcd5-d1cc34d669e3.jpg" alt="" title=""></p>
+
+<p>怎么解决,加一个<code>width:100%</code> <br>
+<img src="(11_1)css布局和定位_files/a378a51c-2c3d-41f4-aa6a-a9e63cfcd018.jpg" alt="" title=""></p>
+
+<p>而这个width是第二个bug的根源; <br>
+<img src="(11_1)css布局和定位_files/04fe5c34-589c-4720-9120-19045fe39eab.jpg" alt="" title=""></p>
+
+<p>发现div的宽度超出了边际了！ <br>
+<img src="(11_1)css布局和定位_files/efe18879-d982-4f80-9f6f-a0ce90ec1474.jpg" alt="" title=""></p>
+
+<p>div宽度如下:(它的宽度还要再加上两个padding;) <br>
+<img src="(11_1)css布局和定位_files/993a242f-e274-44e4-94cd-a06cf04456db.jpg" alt="" title=""> <br>
+body宽度如下: <br>
+<img src="(11_1)css布局和定位_files/7ffee104-7f00-463f-8991-070be861e0f4.jpg" alt="" title=""> <br>
+div宽度:(930.667加上两个padding;) <br>
+body宽度:930.667; <br>
+也就是说：div宽度&gt;body宽度(body是div老爸) <br>
+这是明显的bug; <br>
+而width又不得不写,此时就把padding去掉,此时会造成另外一个bug,不好看！</p>
+
+<p>那么怎么办？ <br>
+步骤如下: <br>
+<img src="(11_1)css布局和定位_files/f58b7336-b650-4ea3-a6da-29e541b00e91.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/3e59dfb1-5491-4c41-a37a-f2f144e2f25f.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/6b925ae3-5e47-41e3-a7c0-674ce4a187c8.jpg" alt="" title=""></p>
+
+<p>将下面这部分放于中间:</p>
+
+<p><img src="(11_1)css布局和定位_files/3beeb040-c5d3-4644-8cbc-2680922af8cc.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/fc656b73-2919-43cb-85b9-9f44cd7fe904.png" alt="" title=""></p>
+
+<p>此时nav已经不是topNavBar的儿子了，是其孙子了;</p>
+
+<p>将原来这里的<code>&gt;</code>给去除; <br>
+<img src="(11_1)css布局和定位_files/5a2a4063-14e5-47de-ad7c-dab49cb0bbf1.png" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/74384eac-9f92-4b86-81fb-46ac4f8d143e.png" alt="" title=""></p>
+
+<p>将clearfix进行移动: <br>
+a标签和Nav皆为float,如果这两个为float,那么它们的父元素为clearfix;</p>
+
+<p><img src="(11_1)css布局和定位_files/2db2bc63-98bf-4d28-b0fe-1ff8abf01d40.png" alt="" title=""></p>
+
+<p>修改后的效果 <br>
+<img src="(11_1)css布局和定位_files/cb654609-ff16-48a9-bb82-95fc3599c959.jpg" alt="" title=""></p>
+
+<p>新增加一个: <br>
+<img src="(11_1)css布局和定位_files/b25e607c-da26-462c-928e-6cf877ed0aef.png" alt="" title=""></p>
+
+<p>新加的一个padding:</p>
+
+<p><img src="(11_1)css布局和定位_files/b4b936dd-fb74-45d6-924c-58352beaff30.jpg" alt="" title=""></p>
+
+<p>目前实现了: <br>
+banner占第一位,NavBar浮在上面; <br>
+NavBar相对于屏幕是固定的;</p>
+
+<p><img src="(11_1)css布局和定位_files/fc0f40e3-9bfa-423f-b362-818210aa8f32.jpg" alt="" title=""></p>
+
+<p><img src="(11_1)css布局和定位_files/a78526d6-33e1-4b0c-8257-2392050ac6a7.jpg" alt="" title=""></p>
+
+<p>绝对定位----》宽度 出了问题(宽度缩了)---》写了width:100%---&gt;宽度又超过去了---》padding干掉---》添加一个div---&gt;在div里面加padding <br>
+<img src="(11_1)css布局和定位_files/9ab23ff5-7779-49a0-9514-36895cebd7f5.jpg" alt="" title=""></p></body></html>

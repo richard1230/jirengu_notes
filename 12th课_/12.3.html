@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML><html><head><style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;padding: 20px 16px;padding: 1.25rem 1rem;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #bbbbbb;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #bbbbbb;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-hide {display:none !important;}
+
+html, .wiz-editor-body {
+  font-family:'Helvetica Neue';
+  font-size:15px;
+  background-color:#FFFFFF;
+  line-height:1.7;
+} 
+body.wiz-editor-body div, body.wiz-editor-body p, body.wiz-editor-body ul, body.wiz-editor-body ol, body.wiz-editor-body dl, body.wiz-editor-body li {
+  margin-top:8px; margin-bottom:8px
+}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/fonts.css?v=1.0.25"><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_common">html {height:100%;} body, .wiz-editor-body {-webkit-tap-highlight-color:rgba(255,255,255,0);}.wiz-editor-body {min-height:100%;box-sizing:border-box;word-wrap: break-word !important;outline:none;position:relative;}.wiz-editor-body img::selection {background-color: rgba(0, 0, 255, 0.3);}.wiz-editor-body input:disabled, .wiz-editor-body textarea:disabled {opacity: 1;}a {cursor:pointer;}::-ms-clear,::-ms-reveal{display:none;}.wiz-editor-body .wiz-table-container {border:0px !important;}.wiz-editor-body .wiz-table-body {border:0px !important;position:relative;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;outline:none;}.wiz-editor-body .wiz-table-body table {margin:0;outline:none;}.wiz-editor-body td,.wiz-editor-body th {outline:none;}.wiz-editor-body .wiz-select-plugin-container {position:relative;display:inline-block;width:160px;height:28px;border-radius:4px;padding:0;margin-left:5px;cursor:pointer;}.wiz-editor-body .wiz-select-plugin-container.more {width:28px;}.wiz-editor-body .wiz-select-plugin-container, .wiz-editor-body .wiz-select-plugin-options {box-sizing:border-box;background:white;border:1px solid #e7e7e7;color:#333;box-shadow: 1px 1px 5px #d0d0d0;}.wiz-editor-body .wiz-select-plugin-header {line-height:28px;font-size:14px;padding: 0 0 0 5px;overflow:hidden;margin-right:27px;white-space:nowrap;}.wiz-editor-body .wiz-select-plugin-header i {position:absolute;top:0;right:0;line-height:26px;padding:0;text-align:center;min-width:27px;border-left:1px solid #e7e7e7;box-sizing:border-box;}.wiz-editor-body .wiz-select-plugin-header i.icon-more {font-size:16px;border:0;width:100%;height:100%}.wiz-editor-body .wiz-select-plugin-options {display:none;background:white;list-style:none;padding:0;margin:0;white-space:nowrap;max-height:200px;min-width:160px;max-width:260px;overflow-x:hidden;overflow-y:auto;position:absolute;top:30px;right:-1px;}.wiz-editor-body .wiz-select-plugin-options-item {font-size:14px;padding:2px 20px;line-height:normal;margin-top: 8px !important;}.wiz-editor-body .wiz-select-plugin-options-item.disabled {font-size:12px; color:#aaaaaa;}.wiz-editor-body .wiz-select-plugin-options-item.selected {background:#448aff;color:white;}.wiz-editor-body .wiz-select-plugin-options-item:hover {background:#448aff !important;color:white !important;}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark {visibility: hidden}.wiz-editor-body .wiz-select-plugin-options-item .icon-checkmark.active {visibility: visible}.wiz-editor-body .wiz-select-plugin-container.active .wiz-select-plugin-options {display:block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_reader_block_scroll">.wiz-block-scroll::-webkit-scrollbar {width: 7px;height: 7px;}.wiz-block-scroll::-webkit-scrollbar-thumb {background-color: #7f7f7f;border-radius: 7px;}.wiz-block-scroll::-webkit-scrollbar-button {display: none;}</style><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/github2.css?v=1.0.25"><link rel="stylesheet" charset="utf-8" name="wiz_tmp_editor_style" href="/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25" id="wiz_/Applications/WizNote.app/Contents/Resources/files/wizeditor/dependency/wizToc.css?v=1.0.25"><style id="wiz_code_style">.wiz-editor-body .wiz-code-container{position: relative; padding:8px 0; margin: 5px 0;text-indent:0; text-align:left;}.CodeMirror {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; color: black; font-size: 10.5pt; font-size: 0.875rem}.wiz-editor-body .wiz-code-container .CodeMirror div {margin-top: 0; margin-bottom: 0;}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre {padding: 0 4px;}.CodeMirror pre.CodeMirror-line {min-height: 24px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #ddd; background-color: #f7f7f7; white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px; min-width: 20px; text-align: right; color: #999; white-space: nowrap;}.CodeMirror-guttermarker {color: black;}.CodeMirror-guttermarker-subtle {color: #999;}.CodeMirror-cursor {border-left: 1px solid black; border-right: none; width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto; border: 0 !important; background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto; border: 0; -webkit-animation: blink 1.06s steps(1) infinite; -moz-animation: blink 1.06s steps(1) infinite; animation: blink 1.06s steps(1) infinite; background-color: #7e7;}@-moz-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@-webkit-keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}@keyframes blink {  0% {}  50% { background-color: transparent; }  100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute; left: 0; right: 0; top: -50px; bottom: -20px; overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc; top: 0; bottom: 0; position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3 {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative; background: #f5f5f5;}.CodeMirror-scroll {overflow: hidden !important; margin-bottom: 0; margin-right: -30px; padding: 16px 30px 16px 0; outline: none; position: relative;}.CodeMirror-sizer {position: relative; border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute; z-index: 6; display: none;}.CodeMirror-vscrollbar {right: 0; top: 0; overflow-x: hidden; overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0 !important; overflow-y: hidden; overflow-x: scroll;pointer-events: auto !important;outline: none;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0; min-height: 100%; z-index: 3;}.CodeMirror-gutter {white-space: normal; height: 100%; display: inline-block; vertical-align: top; margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute; z-index: 4; background: none !important; border: none !important;}.CodeMirror-gutter-background {position: absolute; top: 0; bottom: 0; z-index: 4;}.CodeMirror-gutter-elt {position: absolute; cursor: default; z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text; min-height: 1px;}.CodeMirror pre {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border-width: 0; background: transparent; font-family: inherit; font-size: inherit; margin: 0; white-space: pre; word-wrap: normal; line-height: inherit; color: inherit; z-index: 2; position: relative; overflow: visible; -webkit-tap-highlight-color: transparent; -webkit-font-variant-ligatures: contextual; font-variant-ligatures: contextual;}.CodeMirror-wrap pre {word-wrap: break-word; white-space: pre-wrap; word-break: normal;}.CodeMirror-linebackground {position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0;}.CodeMirror-linewidget {position: relative; z-index: 2; padding: 0.1px;}.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box; box-sizing: content-box;}.CodeMirror-measure {position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;}.CodeMirror-cursor {position: absolute; pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden; position: relative; z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #d9d9d9; }.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background: #ffa; background: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {  .CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ""; }span.CodeMirror-selectedtext { background: none; }.CodeMirror-activeline-background, .CodeMirror-selected {transition: visibility 0ms 100ms;}.CodeMirror-blur .CodeMirror-activeline-background, .CodeMirror-blur .CodeMirror-selected {visibility:hidden;}.CodeMirror-blur .CodeMirror-matchingbracket {color:inherit !important;outline:none !important;text-decoration:none !important;}.CodeMirror-sizer {min-height:auto !important;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_common">.wiz-code-tools {display:none; align-items: center;position: absolute; top: -32px; right: 0; opacity: .95; z-index: 110;}.wiz-editor-body .wiz-code-container .wiz-code-tools {opacity:0;display:flex;transition: opacity 500ms;}.wiz-editor-body .wiz-code-container:hover .wiz-code-tools {opacity:1; }.wiz-editing .CodeMirror-show-tools .wiz-code-tools {z-index: 220;}.wiz-readonly .wiz-code-tools.mobile,.wiz-editing .CodeMirror-show-tools .wiz-code-tools,.wiz-editing .CodeMirror-focused .wiz-code-tools {opacity:1; display: flex;}.CodeMirror-sizer {border-right: 0 !important;}.wiz-editor-body pre.prettyprint {padding:0;}.wiz-editor-body pre.prettyprint code {white-space: pre-wrap;}.wiz-editor-body pre.prettyprint.linenums {box-shadow:none; overflow: auto;-webkit-overflow-scrolling: touch;}.wiz-editor-body pre.prettyprint.linenums ol.linenums {box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset; padding: 10px 10px 10px 40px !important;}.wiz-editing .CodeMirror-activeline-background {display: none;}.wiz-editing .CodeMirror-focused .CodeMirror-activeline-background {display: block;}</style><style name="wiz_tmp_editor_style" id="wiz_tmp_style_code_reader">.wiz-readonly .CodeMirror-cursors {visibility: hidden !important;}</style></head><body class="wiz-editor-body wiz-readonly markdown-body" contenteditable="false" style="opacity: 1;"><p><div class="wiz_toc_layer"><a class="wiz_toc h1" href="#自我介绍里面的字体">自我介绍里面的字体</a><br><a class="wiz_toc h1" href="#技能树">技能树</a><br><a class="wiz_toc h2" href="#间隙">间隙</a><br><a class="wiz_toc h2" href="#白框+阴影的效果">白框+阴影的效果</a><br><a class="wiz_toc h2" href="#干掉样式">干掉样式</a><br><a class="wiz_toc h2" href="#做里面的进度栏">做里面的进度栏</a><br><a class="wiz_toc h3" href="#做长方形进度条">做长方形进度条</a><br><a class="wiz_toc h2" href="#布局">布局</a><br><a class="wiz_toc h2" href="#设置子和线条进度条的间距">设置子和线条(进度条)的间距</a><br><a class="wiz_toc h2" href="#做中间空的部分">做中间空的部分</a></div><a href="#wizToc" style="display: none;">TOC</a></p>
+
+<h2 id="自我介绍里面的字体">自我介绍里面的字体</h2>
+
+<p><img src="12.3_files/12cfad06-0565-40e8-8915-36988a0010cf.png" alt="" title=""></p>
+
+<h2 id="技能树">技能树</h2>
+
+<p><img src="12.3_files/9edce19c-7e15-4de0-9e04-c73d3a03dfcb.png" alt="" title=""></p>
+
+<p><img src="12.3_files/e288b2ff-6041-4cb6-b7da-64fe91ee29d4.png" alt="" title=""></p>
+
+<p><img src="12.3_files/7fb086d1-4c5f-4a30-b33d-61297974d07a.png" alt="" title=""></p>
+
+<p><img src="12.3_files/57f7599c-8308-4096-97fe-c6c209d3c940.png" alt="" title=""></p>
+
+<p><img src="12.3_files/5e08bccc-36ad-4109-9ef5-b41fb7e34810.png" alt="" title=""></p>
+
+<h3 id="间隙">间隙</h3>
+
+<p><img src="12.3_files/197bffa1-80e1-4d78-acf7-4ae9cfe9f1e8.png" alt="" title=""></p>
+
+<p><img src="12.3_files/0e9a9516-2bd2-4c74-a5f0-7d0e0681e9a4.png" alt="" title=""></p>
+
+<h3 id="白框+阴影的效果">白框+阴影的效果</h3>
+
+<p><img src="12.3_files/c532c66e-8a86-4f92-b173-c651e56ab7a1.jpg" alt="" title=""></p>
+
+<p><img src="12.3_files/04585886-8c21-44ae-9d9c-cd4d65cb5986.png" alt="" title=""></p>
+
+<h3 id="干掉样式">干掉样式</h3>
+
+<p><img src="12.3_files/d3c8eb8e-36b5-4099-bf71-25d08bf1da37.png" alt="" title=""> <br>
+就是把前面的数字给去除了； <br>
+<img src="12.3_files/e7158193-c244-49d2-8850-49abaa6cf124.png" alt="" title=""></p>
+
+<p><img src="12.3_files/b1711b97-e7ff-4b37-bf8d-94149c058a0c.png" alt="" title=""></p>
+
+<p>应该是这种效果： <br>
+<img src="12.3_files/872381e0-03a0-4d9f-b7e5-f75fb8068a41.jpg" alt="" title=""> <br>
+我的效果,没有阴影？？(我这里把skills写成skill了,太粗心！！！) <br>
+<img src="12.3_files/fbb99bec-06cb-49a6-b685-cb0035054ec9.png" alt="" title=""></p>
+
+<p>正确的: <br>
+<img src="12.3_files/7656e4ec-305a-4e72-acf2-0da68725c7a7.png" alt="" title=""></p>
+
+<h3 id="做里面的进度栏">做里面的进度栏</h3>
+
+<p>step1. <br>
+<img src="12.3_files/ece2370c-e90d-4651-b9b8-15fcbff1fa63.png" alt="" title=""></p>
+
+<p>效果: <br>
+<img src="12.3_files/0fbc7fb8-ead8-4098-b2b5-87ace851a06f.png" alt="" title=""></p>
+
+<h4 id="做长方形进度条">做长方形进度条</h4>
+
+<p><img src="12.3_files/4e7bfce1-032d-43fb-9d78-d3930407fe42.png" alt="" title=""></p>
+
+<p>这里有个注意点: <br>
+CSS选择器：#id和.class中间有空格和无空格的区别 <br>
+<a href="https://blog.csdn.net/m0_37996098/article/details/78478791">https://blog.csdn.net/m0_37996098/article/details/78478791</a> <br>
+下面的这个资源解释的比较好！！！ <br>
+<a href="http://www.runoob.com/cssref/css-selectors.html">http://www.runoob.com/cssref/css-selectors.html</a></p>
+
+<p>最后代码：(注意空格,&gt;等几个符号，可以看上面那个连接！！) <br>
+<img src="12.3_files/c7e7b215-4524-4948-b342-6a5a8584a5f3.png" alt="" title=""></p>
+
+<p>效果: <br>
+<img src="12.3_files/70da9f57-4cdc-4552-88f7-b61bf384e34b.png" alt="" title=""></p>
+
+<h3 id="布局">布局</h3>
+
+<p>做布局,用float即可; <br>
+1th: <br>
+<img src="12.3_files/abe18c62-c2fb-4f9a-8630-74799c592ddb.png" alt="" title=""></p>
+
+<p><img src="12.3_files/8606cd0e-ba5b-49de-880e-7a88f8264f36.png" alt="" title=""></p>
+
+<p><img src="12.3_files/f220c296-d81b-48c1-aaf6-569f11eff534.png" alt="" title=""></p>
+
+<p>复制6份： <br>
+<img src="12.3_files/1a037d51-2661-4329-ac86-cf149b6cf824.png" alt="" title=""></p>
+
+<p><img src="12.3_files/8a029c3a-3e97-4075-a386-b7b5512af405.png" alt="" title=""></p>
+
+<p>效果： <br>
+<img src="12.3_files/56a28c11-5d07-4119-b134-57ea3c97981f.png" alt="" title=""></p>
+
+<p><img src="12.3_files/e44957ea-2202-42f9-82e1-9211db5d30e7.png" alt="" title=""> <br>
+去掉加粗： <br>
+<img src="12.3_files/487d4d55-6f21-40ee-9c3e-a2ba55475986.png" alt="" title=""> <br>
+更改颜色： <br>
+<img src="12.3_files/d4f6450e-4ef9-4252-bd57-f17b794f0e39.png" alt="" title=""></p>
+
+<p>去掉框框(border) <br>
+<img src="12.3_files/5141a7bf-492f-40da-a037-8fdf83c6c778.png" alt="" title=""></p>
+
+<p>加背景色: <br>
+<img src="12.3_files/f9987d3a-ebb3-40d5-a16d-b2d52b24a4f0.png" alt="" title=""></p>
+
+<h3 id="设置子和线条进度条的间距">设置子和线条(进度条)的间距</h3>
+
+<p><img src="12.3_files/ceae9dbc-6ac4-45fc-a89f-2c1d627e3be2.png" alt="" title=""></p>
+
+<p><img src="12.3_files/612e968a-b98e-4380-a81b-1e8a9efe5867.png" alt="" title=""></p>
+
+<p>设置垂直间距:44px <br>
+<img src="12.3_files/1916a295-5dcd-4e19-addf-a7c9cffe6a4e.jpg" alt="" title=""></p>
+
+<p><img src="12.3_files/73f2f563-3c1c-4b0f-b8be-86ea6ed8af8f.png" alt="" title=""></p>
+
+<p><img src="12.3_files/6c2e8607-1139-428e-81fe-edfdd2645237.png" alt="" title=""></p>
+
+<p>左右间距:</p>
+
+<p><img src="12.3_files/46b58399-ba39-495a-9d5b-dfa105538171.png" alt="" title=""></p>
+
+<p><img src="12.3_files/a9b9e469-5680-4e32-9b96-cfbbdd391ebe.png" alt="" title=""></p>
+
+<p><img src="12.3_files/4e6814df-25c0-467d-837f-efa816172cd5.png" alt="" title=""></p>
+
+<p><img src="12.3_files/4a9cab8d-4adb-448d-b166-e770a7661da6.png" alt="" title=""></p>
+
+<h3 id="做中间空的部分">做中间空的部分</h3>
+
+<p><img src="12.3_files/e4b17a70-ac03-430e-b1ad-f2b7d03fec85.jpg" alt="" title=""></p>
+
+<p>新的盒模型:</p>
+
+<div id="wiz_cm_1573898497805_6127" class="wiz-code-container" contenteditable="false" data-mode="JavaScript" data-theme="default"><textarea readonly="" style="display:none;">box-sizing: border-box;</textarea><wiz_code_mirror><div class="CodeMirror cm-s-default" data-id="wiz_cm_1573898497805_6127"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 20px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0" readonly=""></textarea></div><div class=" wiz-hide wiz_CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="width: 18px; pointer-events: none;"><div style="min-width: 1px; height: 0px;"></div></div><div class=" wiz-hide wiz_CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true" style="height: 18px; pointer-events: none;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: 0px; border-right-width: 30px; min-height: 32px; min-width: 188.625px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class=" wiz-hide wiz_CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">box</span><span class="cm-operator">-</span><span class="cm-variable">sizing</span>: <span class="cm-variable">border</span><span class="cm-operator">-</span><span class="cm-variable">box</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 32px;"></div><div class="CodeMirror-gutters" style="height: 62px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></wiz_code_mirror></div>
+
+<p>此时width的50%它是算border的; <br>
+padding也是算的;</p>
+
+<p><img src="12.3_files/4a5657ec-629e-42bb-8a1a-c0c3e8901f03.png" alt="" title=""></p>
+
+<p>效果: <br>
+<img src="12.3_files/13d0f453-336b-43f2-ba50-04ae1307e596.png" alt="" title=""></p>
+
+<p>发现一个小问题: <br>
+<img src="12.3_files/66fb1e90-3e18-4c3f-97b6-16237aeeec90.png" alt="" title=""></p>
+
+<p><img src="12.3_files/5ec51716-5f9b-4350-aeb3-626713b6f943.png" alt="" title=""> <br>
+怎么解决这个问题: <br>
+nth-child(even):(单数用odd表示) <br>
+第偶数个儿子有这样的属性;</p>
+
+<p>默认左浮:</p>
+
+<p><img src="12.3_files/6a1e8bf2-45cd-4520-88a5-71324d4a3370.png" alt="" title=""> <br>
+如果是偶数的儿子则是右浮:</p>
+
+<p><img src="12.3_files/3c8f01b2-55b8-48b8-9213-e98e45589439.png" alt="" title=""></p>
+
+<p>效果: <br>
+<img src="12.3_files/e9845256-3904-4140-a912-a953c9b4ae44.png" alt="" title=""></p>
+
+<p><img src="12.3_files/1df1faa7-4796-4258-9506-829ea3035fa8.png" alt="" title=""></p>
+
+<p>间距：</p>
+
+<p><img src="12.3_files/5ac99293-ba09-4b26-b2b1-41a2791acb34.png" alt="" title=""></p>
+
+<p><img src="12.3_files/49657cae-d04d-4a2b-b346-edd51aa11cac.png" alt="" title=""></p></body></html>
